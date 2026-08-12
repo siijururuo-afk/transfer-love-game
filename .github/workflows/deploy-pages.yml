@@ -31,8 +31,10 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: 配置 Pages
+      - name: 配置并启用 Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: 安装依赖
         run: npm ci
