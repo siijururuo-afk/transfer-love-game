@@ -1,7 +1,7 @@
 import type { ContentBlock, ReadStep } from '../types/content';
 import {
   CHAPTER_ORDER,
-  buildSteps,
+  buildChapterSteps,
   getChapter,
 } from '../data/loader';
 
@@ -22,10 +22,7 @@ export function chapterSteps(chapter: string): ReadStep[] {
 }
 
 function buildChapterStepsSafe(chapter: string): ReadStep[] {
-  const blocks = getChapter(chapter);
-  const steps: ReadStep[] = [];
-  for (const b of blocks) steps.push(...buildSteps(b));
-  return steps;
+  return buildChapterSteps(chapter);
 }
 
 export function firstStepOfBlock(chapter: string, sourceId: string): number {

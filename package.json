@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "validate": "node scripts/validate.js"
+    "validate": "node scripts/validate.js",
+    "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs"
   },
   "dependencies": {
     "react": "^18.3.1",
