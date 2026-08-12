@@ -55,6 +55,10 @@ export function displayBody(text: string, speaker?: string): string {
       break;
     }
   }
+  // A few source lines have only one surviving outer quote after a speaker
+  // prefix (for example “…？”). Do not show that orphan punctuation inside a
+  // speech bubble; internal quotation marks remain untouched.
+  body = body.replace(/^[”’"']+/, '').replace(/[“”‘’"']+$/, '').trim();
   return body;
 }
 

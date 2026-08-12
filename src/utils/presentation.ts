@@ -115,7 +115,15 @@ function item(block: ContentBlock): PresentationItem {
 function makeStep(
   base: ContentBlock,
   items: PresentationItem[],
-  options: { text?: string; speaker?: string; sceneKey?: string; sceneKind?: SceneKind; type?: ContentType; subtype?: string } = {},
+  options: {
+    text?: string;
+    speaker?: string;
+    sceneKey?: string;
+    sceneKind?: SceneKind;
+    sceneParticipants?: string[];
+    type?: ContentType;
+    subtype?: string;
+  } = {},
 ): ReadStep {
   const block = {
     ...base,
@@ -132,6 +140,7 @@ function makeStep(
     items,
     sceneKey: options.sceneKey,
     sceneKind: options.sceneKind ?? 'single',
+    sceneParticipants: options.sceneParticipants,
   };
 }
 
@@ -154,7 +163,13 @@ function normalize(blocks: ContentBlock[]): ContentBlock[] {
     }
     if (block.type === 'program_caption' && BRACKETED.test(block.text)) {
       const nearCount = result.slice(index + 1, index + 45).some((entry) => entry.type === 'forum' && entry.subtype === 'count');
-      if (nearCount) {
+      // Some source posts omit an explicit “评论（n）” line. Their title is
+      // still followed by post media/body and then forum replies, so looking
+      // only for a count incorrectly split those threads into several pages.
+      const nearForum = result.slice(index + 1, index + 12).some((entry) => (
+        entry.type === 'forum' || /^\s*ㄴ/.test(entry.text)
+      ));
+      if (nearCount || nearForum) {
         block.type = 'forum';
         block.subtype = 'title';
       } else if (/\.(?:jpg|jpeg|png|gif|mp4)\s*\]$/i.test(block.text)) {
@@ -222,6 +237,7 @@ function normalize(blocks: ContentBlock[]): ContentBlock[] {
     }
     if (
       block.type === 'narrative'
+      && block.sourceId !== 'P05_0039'
       && prev?.type === 'interview'
       && prev.subtype === 'answer'
       && (
@@ -310,6 +326,27 @@ function buildForumSteps(blocks: ContentBlock[], start: number, end: number): Re
         sceneKind: 'forum',
         type: 'forum',
         subtype: 'comment',
+      }));
+      index = cursor - 1;
+      continue;
+    }
+    // A screenshot/photo directly after a comment belongs to that comment.
+    // Keeping it in the same step avoids rendering the media as a new
+    // anonymous reply with its own avatar.
+    if (block.type === 'forum' && block.subtype === 'comment' && group[index + 1]?.type === 'media') {
+      const mergedBlocks = [block];
+      let cursor = index + 1;
+      while (cursor < group.length && group[cursor].type === 'media') {
+        mergedBlocks.push(group[cursor]);
+        cursor += 1;
+      }
+      const nested = /^\s*(?:ㄴ|@)/.test(block.text);
+      steps.push(makeStep(block, mergedBlocks.map(item), {
+        sceneKey: key,
+        sceneKind: 'forum',
+        type: 'forum',
+        subtype: nested ? 'nested_comment' : 'comment',
+        speaker: nested ? '楼中楼回复' : (block.speaker || '匿名网友'),
       }));
       index = cursor - 1;
       continue;
@@ -449,7 +486,7 @@ export function buildPresentationSteps(source: ContentBlock[]): ReadStep[] {
       continue;
     }
 
-    if (['program_task', 'program_rule', 'program_notice', 'identity_reveal', 'date_task', 'x_room', 'lyrics'].includes(block.type)) {
+    if (['program_task', 'program_rule', 'program_notice', 'identity_reveal', 'date_task', 'lyrics'].includes(block.type)) {
       const end = contiguousEnd(blocks, index, block.type);
       const grouped = blocks.slice(index, end);
       steps.push(makeStep(grouped[0], grouped.map(item), { type: block.type }));
@@ -460,10 +497,23 @@ export function buildPresentationSteps(source: ContentBlock[]): ReadStep[] {
     if (block.type === 'dialogue') {
       const end = contiguousEnd(blocks, index, 'dialogue');
       const names = inferDialogueSpeakers(blocks, index, end);
+      const sceneParticipants = Array.from(new Set(names.filter((name): name is string => Boolean(name && name !== '出演者'))));
       const key = `dialogue:${block.sourceId}`;
       for (let cursor = index; cursor < end; cursor += 1) {
         steps.push(makeStep(blocks[cursor], [item(blocks[cursor])], {
-          speaker: names[cursor - index], sceneKey: key, sceneKind: 'dialogue', type: 'dialogue',
+          speaker: names[cursor - index], sceneKey: key, sceneKind: 'dialogue', sceneParticipants, type: 'dialogue',
+        }));
+      }
+      index = end;
+      continue;
+    }
+
+    if (block.type === 'x_room') {
+      const end = contiguousEnd(blocks, index, 'x_room');
+      const key = `xroom:${block.sourceId}`;
+      for (let cursor = index; cursor < end; cursor += 1) {
+        steps.push(makeStep(blocks[cursor], [item(blocks[cursor])], {
+          sceneKey: key, sceneKind: 'xroom', type: 'x_room',
         }));
       }
       index = end;
@@ -479,14 +529,17 @@ export function buildPresentationSteps(source: ContentBlock[]): ReadStep[] {
     if (sceneKind) {
       const end = contiguousEnd(blocks, index, block.type);
       const key = `${sceneKind}:${block.sourceId}`;
+      const sceneParticipants = Array.from(new Set(
+        blocks.slice(index, end).map((entry) => canonicalName(entry.speaker)).filter((name): name is string => Boolean(name)),
+      ));
       if (sceneKind === 'social') {
         const grouped = blocks.slice(index, end);
-        steps.push(makeStep(grouped[0], grouped.map(item), { sceneKey: key, sceneKind, type: block.type }));
+        steps.push(makeStep(grouped[0], grouped.map(item), { sceneKey: key, sceneKind, sceneParticipants, type: block.type }));
         index = end;
         continue;
       }
       for (let cursor = index; cursor < end; cursor += 1) {
-        steps.push(makeStep(blocks[cursor], [item(blocks[cursor])], { sceneKey: key, sceneKind, type: block.type }));
+        steps.push(makeStep(blocks[cursor], [item(blocks[cursor])], { sceneKey: key, sceneKind, sceneParticipants, type: block.type }));
       }
       index = end;
       continue;

@@ -9,7 +9,10 @@ const Lines: React.FC<{ text: string; className?: string }> = ({ text, className
 );
 
 function participants(stream: ReadStep[]): string[] {
-  return Array.from(new Set(stream.map((step) => step.speaker?.trim()).filter(Boolean) as string[]));
+  return Array.from(new Set([
+    ...stream.flatMap((step) => step.sceneParticipants || []),
+    ...stream.map((step) => step.speaker?.trim()).filter(Boolean) as string[],
+  ]));
 }
 
 function sideFor(speaker: string | undefined, names: string[]): 'left' | 'right' | 'system' {
@@ -25,15 +28,22 @@ function speakerTone(speaker?: string): string {
   return 'speaker--support';
 }
 
-function forumTitle(text: string): string {
-  return text.trim().replace(/^\[/, '').replace(/\]$/, '').replace(/\s*\.\s*(?:jpg|jpeg|png|gif|mp4)\s*$/i, '').trim();
+export function forumTitle(text: string): string {
+  return text
+    .trim()
+    .replace(/^\[/, '')
+    .replace(/\]$/, '')
+    .replace(/^匿名网友\s*[|ㅣ]\s*/, '')
+    .replace(/\s*\.\s*(?:jpg|jpeg|png|gif|mp4)\s*$/i, '')
+    .trim();
 }
 
 const RouteMedia: React.FC<{ entry: PresentationItem }> = ({ entry }) => {
   const video = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(entry.subtype || '');
   const subtype = entry.subtype || 'image';
+  const variant = Number(entry.sourceId.replace(/\D/g, '')) % 4;
   return (
-    <div className={`route-media route-media--${subtype} ${video ? 'route-media--video' : 'route-media--photo'}`} aria-label={entry.text}>
+    <div className={`route-media route-media--${subtype} route-media--variant-${variant} ${video ? 'route-media--video' : 'route-media--photo'}`} aria-label={entry.text}>
       <div className="route-media__visual" aria-hidden="true"><i /><i /><i /><span /></div>
       {video && <span className="route-media__play"><Icon name="play" size={24} /></span>}
       <span className="sr-only">{entry.text}</span>
@@ -157,6 +167,45 @@ export const VoiceStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }
   );
 };
 
+export const XRoomStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean }> = ({ stream, revealed }) => {
+  const entries = stream.flatMap((step) => step.items);
+  return (
+    <article className="xroom-flow">
+      <header>
+        <div><span>X ROOM</span><strong>记忆档案</strong></div>
+        <small>{String(entries.length).padStart(2, '0')} / ARCHIVE</small>
+      </header>
+      {!revealed ? (
+        <div className="xroom-flow__door">
+          <Icon name="door" size={34} />
+          <strong>进入 X ROOM</strong>
+          <span>点按后按原文顺序查看</span>
+        </div>
+      ) : (
+        <div className="xroom-flow__archive">
+          {entries.map((entry, index) => {
+            const question = /^\s*Q[.．]/.test(entry.text);
+            const object = /(?:照片|相片|门票|票根|专辑|DVD|视频|影像|戒指|香水|诗集|信|台本|球衣|物品|截图|图片)/i.test(entry.text)
+              && !question && !entry.speaker;
+            const tone = /宇硕/.test(entry.speaker || '') ? ' is-wooseok' : /承衍/.test(entry.speaker || '') ? ' is-seungyoun' : '';
+            return (
+              <section
+                className={`xroom-flow__entry${question ? ' is-question' : ''}${object ? ' is-object' : ''}${tone}${index === entries.length - 1 ? ' is-new' : ''}`}
+                key={entry.sourceId}
+              >
+                {object && <div className="xroom-flow__object-mark"><Icon name="image" size={16} /><span>MEMORY OBJECT</span></div>}
+                {question && <b>Q.</b>}
+                {entry.speaker && <small>{entry.speaker}</small>}
+                <Lines text={question ? entry.text.replace(/^\s*Q[.．]\s*/, '') : displayBody(entry.text, entry.speaker)} />
+              </section>
+            );
+          })}
+        </div>
+      )}
+    </article>
+  );
+};
+
 export const InterviewStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }) => {
   const allItems = stream.flatMap((step) => step.items);
   const header = allItems.find((entry) => entry.subtype === 'header');
@@ -255,11 +304,14 @@ export const EpilogueStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ strea
   <article className="epilogue-flow">
     <header><span>AND NOW</span><strong>以及现在</strong><TransitHeart compact /></header>
     <div className="epilogue-flow__film">
-      {stream.map((step, index) => (
-        <div className={index === stream.length - 1 ? 'is-new' : ''} key={`${step.sourceId}-${index}`}>
-          <Lines text={step.text} />
+      {stream.map((step, index) => {
+        const spoken = /^\s*[“‘"']/.test(step.text);
+        return (
+        <div className={`${spoken ? 'is-dialogue ' : ''}${index === stream.length - 1 ? 'is-new' : ''}`} key={`${step.sourceId}-${index}`}>
+          <Lines text={spoken ? displayBody(step.text, step.speaker) : step.text} />
         </div>
-      ))}
+        );
+      })}
     </div>
   </article>
 );

@@ -12,6 +12,7 @@ import {
   FinalStreamRenderer,
   EpilogueStreamRenderer,
   VoiceStreamRenderer,
+  XRoomStreamRenderer,
   SocialStreamRenderer,
 } from './streams';
 
@@ -25,14 +26,56 @@ const Lines: React.FC<{ text: string; className?: string }> = ({ text, className
   <div className={className} style={{ whiteSpace: 'pre-wrap' }}>{text}</div>
 );
 
+const MIXED_NARRATIVE_SPEAKERS: Record<string, Array<{ speaker: string; side: 'left' | 'right' }>> = {
+  P01_0107: [{ speaker: '宇硕', side: 'right' }],
+  P02_0148: [{ speaker: '承衍', side: 'left' }, { speaker: '宇硕', side: 'right' }],
+};
+
+function mixedNarrativeParts(text: string, speakers: Array<{ speaker: string; side: 'left' | 'right' }>) {
+  const parts: Array<{ kind: 'narration' | 'dialogue'; text: string; speaker?: string; side?: 'left' | 'right' }> = [];
+  const quoted = /“([^”]*)”/g;
+  let cursor = 0;
+  let quoteIndex = 0;
+  for (const match of text.matchAll(quoted)) {
+    const start = match.index ?? cursor;
+    const narration = text.slice(cursor, start).replace(/[：:]\s*$/, '').trim();
+    if (narration) parts.push({ kind: 'narration', text: narration });
+    const role = speakers[quoteIndex];
+    parts.push({ kind: 'dialogue', text: match[1], speaker: role?.speaker, side: role?.side || 'left' });
+    cursor = start + match[0].length;
+    quoteIndex += 1;
+  }
+  const tail = text.slice(cursor).trim();
+  if (tail) parts.push({ kind: 'narration', text: tail });
+  return parts;
+}
+
 /* ---------- 正片：不套卡片，保留阅读呼吸 ---------- */
-export const NarrativeRenderer: React.FC<RenderProps> = ({ step }) => (
-  <article className="m-narrative">
-    <div className="m-narrative__mark" aria-hidden="true">“</div>
-    <Lines text={step.text} className="m-narrative__copy" />
-    <div className="m-narrative__rule" aria-hidden="true"><i /><span>STORY</span></div>
-  </article>
-);
+export const NarrativeRenderer: React.FC<RenderProps> = ({ step }) => {
+  const mixedSpeakers = MIXED_NARRATIVE_SPEAKERS[step.sourceId];
+  if (mixedSpeakers) {
+    const mixed = mixedNarrativeParts(step.text, mixedSpeakers);
+    return (
+      <article className="mixed-narrative">
+        {mixed.map((part, index) => part.kind === 'narration' ? (
+          <Lines key={index} text={part.text} className="mixed-narrative__copy" />
+        ) : (
+          <div className={`mixed-narrative__speech mixed-narrative__speech--${part.side} ${/宇硕/.test(part.speaker || '') ? 'is-wooseok' : 'is-seungyoun'}`} key={index}>
+            <small>{part.speaker}</small>
+            <Lines text={part.text} />
+          </div>
+        ))}
+      </article>
+    );
+  }
+  return (
+    <article className="m-narrative">
+      <div className="m-narrative__mark" aria-hidden="true">“</div>
+      <Lines text={step.text} className="m-narrative__copy" />
+      <div className="m-narrative__rule" aria-hidden="true"><i /><span>STORY</span></div>
+    </article>
+  );
+};
 
 export const DialogueRenderer: React.FC<RenderProps> = ({ step }) => (
   <article className="m-dialogue">
@@ -344,11 +387,12 @@ const MEDIA_LABEL: Record<string, string> = {
 };
 export const MediaRenderer: React.FC<RenderProps> = ({ step }) => {
   const subtype = step.block.subtype || 'image';
+  const variant = Number(step.sourceId.replace(/\D/g, '')) % 4;
   const label = MEDIA_LABEL[subtype] || '媒体';
   const playable = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(subtype);
   const placeholderOnly = /^\s*[（(](?:图片|视频|动图|截图|YouTube视频)[）)]\s*$/i.test(step.text);
   return (
-    <article className="m-media">
+    <article className={`m-media m-media--variant-${variant}`}>
       <div className="m-media__frame">
         <header><span>{label}</span><i>{subtype.toUpperCase()}</i></header>
         <div className="m-media__art" aria-label={step.text}>
@@ -432,6 +476,7 @@ export function ContentRenderer({ step, revealed, stream }: RenderProps) {
     case 'forum': return <ForumThreadRenderer stream={activeStream} />;
     case 'chat': return <ChatStreamRenderer stream={activeStream} />;
     case 'voice': return <VoiceStreamRenderer stream={activeStream} />;
+    case 'xroom': return <XRoomStreamRenderer stream={activeStream} revealed={revealed} />;
     case 'dialogue': return <ChatStreamRenderer stream={activeStream} dialogue />;
     case 'interview': return <InterviewStreamRenderer stream={activeStream} />;
     case 'observation': return <ObservationStreamRenderer stream={activeStream} />;
