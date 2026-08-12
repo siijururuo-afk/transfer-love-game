@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '../components/Doodles';
-import { manifestData } from '../data/loader';
+import { CHAPTER_ORDER, manifestData } from '../data/loader';
 import type { ProgressState } from '../hooks/useProgress';
 
 interface Props {
@@ -24,52 +24,81 @@ export const HomeScreen: React.FC<Props> = ({
   const read = Object.keys(state.readSourceIds).length;
   const pct = total ? Math.round((read / total) * 100) : 0;
   const recent = state.current.chapter;
+  const episode = Math.max(1, CHAPTER_ORDER.indexOf(recent) + 1);
+  const progressStyle = { '--progress': `${pct * 3.6}deg` } as React.CSSProperties;
 
   return (
     <div className="home">
-      <div className="home__brand">
-        <Icon name="heart" size={16} /> 换乘恋爱 · TRANSIT LOVE
-      </div>
-      <div>
-        <h1 className="home__title">换乘恋爱</h1>
-        <p className="home__sub">以上帝视角，观看一档恋爱真人秀的既定故事。</p>
-      </div>
+      <header className="home__topline">
+        <span className="home__edition">VIEWER'S CUT · 10 EPISODES</span>
+        <span className="home__onair"><i /> ON AIR</span>
+      </header>
 
-      <div className="home__notice">{VIEWER_NOTICE}</div>
+      <section className="home__hero" aria-labelledby="home-title">
+        <div className="home__route" aria-hidden="true">
+          <span className="home__route-dot" />
+          <span className="home__route-line" />
+          <Icon name="heart" size={22} />
+        </div>
+        <div className="home__title-wrap">
+          <div className="home__eyebrow">TRANSIT LOVE</div>
+          <h1 className="home__title" id="home-title">
+            <span>换乘</span>
+            <span className="home__title-second">恋爱<i>×</i></span>
+          </h1>
+          <p className="home__sub">一档只能观看，不能改写的恋爱真人秀</p>
+        </div>
+        <div className="home__stamp" aria-hidden="true">
+          GOD'S<br />EYE<br /><small>观众席</small>
+        </div>
+      </section>
+
+      <section className="home__ticket" aria-label="作品说明">
+        <div className="home__ticket-no">NO. 2893</div>
+        <p>{VIEWER_NOTICE}</p>
+        <div className="home__ticket-modules" aria-hidden="true">
+          <span>采访</span><span>短信</span><span>X ROOM</span><span>最终选择</span>
+        </div>
+      </section>
+
+      <section className="home__resume">
+        <div className="home__dial" style={progressStyle} aria-label={`总阅读进度 ${pct}%`}>
+          <div><strong>{pct}</strong><small>%</small></div>
+        </div>
+        <div className="home__resume-copy">
+          <span className="home__resume-kicker">{hasProgress ? 'CONTINUE WATCHING' : 'START WATCHING'}</span>
+          <strong>{hasProgress ? `${recent} · 第 ${state.current.stepIndex + 1} 段` : '从第1部分开始观看'}</strong>
+          <small>已读 {read.toLocaleString('zh-CN')} / {total.toLocaleString('zh-CN')} 段</small>
+        </div>
+        <div className="home__episode">EP<br /><b>{String(episode).padStart(2, '0')}</b></div>
+      </section>
 
       <div className="home__actions">
         <button
-          className="btn btn--primary btn--block"
-          onClick={onContinue}
-          disabled={!hasProgress}
-          aria-label="继续阅读"
+          className="btn btn--primary btn--hero"
+          onClick={hasProgress ? onContinue : onRestart}
+          aria-label={hasProgress ? '继续阅读' : '开始观看'}
         >
-          <Icon name="play" size={18} /> 继续阅读
+          <span>{hasProgress ? '继续观看' : '开始观看'}</span>
+          <Icon name="next" size={20} />
         </button>
-        <button className="btn btn--block" onClick={onRestart} aria-label="从头开始">
-          <Icon name="reset" size={18} /> 从头开始
-        </button>
-        <button className="btn btn--block" onClick={onOpenChapters} aria-label="章节目录">
-          <Icon name="list" size={18} /> 章节目录
-        </button>
-      </div>
-
-      <div>
-        <div className="home__section-title">阅读进度</div>
-        <div className="home__progress" style={{ marginTop: 8 }}>
-          <i style={{ width: `${pct}%` }} />
-        </div>
-        <div className="home__meta" style={{ marginTop: 10 }}>
-          <span className="pill">总进度 <b>{pct}%</b></span>
-          <span className="pill">已读 <b>{read}</b> / {total}</span>
-          <span className="pill">最近 <b>{recent}</b></span>
+        <div className="home__action-row">
+          {hasProgress && (
+            <button className="btn btn--quiet" onClick={onRestart} aria-label="从头开始">
+              <Icon name="reset" size={17} /> 从头开始
+            </button>
+          )}
+          <button className="btn btn--quiet" onClick={onOpenChapters} aria-label="章节目录">
+            <Icon name="list" size={17} /> 章节目录
+          </button>
         </div>
       </div>
 
-      <div className="home__meta" style={{ marginTop: 'auto' }}>
-        <span className="pill">共 {manifestData.totalChapters} 部分</span>
-        <span className="pill">{manifestData.totalBlocks} 段原文</span>
-      </div>
+      <footer className="home__footer">
+        <span>{manifestData.totalChapters} PARTS</span>
+        <span className="home__footer-line" />
+        <span>ORIGINAL TEXT · NO BRANCHES</span>
+      </footer>
     </div>
   );
 };
