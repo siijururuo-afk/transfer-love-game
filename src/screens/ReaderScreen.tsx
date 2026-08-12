@@ -45,7 +45,9 @@ export const ReaderScreen: React.FC<Props> = ({
 
   const curKey = `${step?.sourceId}#${step?.childIndex ?? -1}`;
   const meta = step ? MODULE_META[step.block.type] : MODULE_META.fallback;
-  const isBlocking = meta.blocking;
+  // X ROOM uses one explicit door-opening tap, then behaves like a continuous
+  // memory feed: each following tap adds the next original entry immediately.
+  const isBlocking = meta.blocking && !(step?.sceneKind === 'xroom' && sceneStream.length > 1);
   const isRevealed = !isBlocking || revealed.has(curKey);
 
   // total / global progress

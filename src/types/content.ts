@@ -65,6 +65,7 @@ export type SceneKind =
   | 'forum'
   | 'chat'
   | 'voice'
+  | 'xroom'
   | 'dialogue'
   | 'interview'
   | 'observation'
@@ -104,4 +105,5 @@ export interface ReadStep {
   items: PresentationItem[];
   sceneKey?: string;
   sceneKind?: SceneKind;
+  sceneParticipants?: string[];
 }
