@@ -37,12 +37,25 @@ export const MODULE_META: Record<ContentType, ModuleMeta> = {
   fallback: { label: '原文', icon: 'note', blocking: false },
 };
 
-// Strip a leading "Speaker：" only for display (data.text stays intact).
+// Presentation-only cleanup. The source data remains byte-for-byte intact.
 export function displayBody(text: string, speaker?: string): string {
-  if (!speaker) return text;
-  const m = text.match(/^([^：:]{1,16})[：:]\s*([\s\S]*)$/);
-  if (m && m[1] === speaker) return m[2];
-  return text;
+  let body = text.trim();
+  const m = body.match(/^([^：:]{1,16})[：:]\s*([\s\S]*)$/);
+  if (m && (!speaker || m[1] === speaker || m[1].endsWith(speaker))) body = m[2].trim();
+  body = body.replace(/\s*——\s*(?:曹承衍|金宇硕|金曜汉|承衍|宇硕|曜汉X|曜汉|男[一二三四五六七八九])\s*$/, '').trim();
+  // A speech bubble already communicates direct speech. Remove Chinese outer
+  // quotation marks even when a short action beat follows the first sentence.
+  if (body.startsWith('“') || body.startsWith('‘')) {
+    body = body.replace(/[“”‘’]/g, '').trim();
+  }
+  const quotePairs: Array<[string, string]> = [['“', '”'], ['‘', '’'], ['"', '"'], ["'", "'"]];
+  for (const [open, close] of quotePairs) {
+    if (body.startsWith(open) && body.endsWith(close) && body.length > 1) {
+      body = body.slice(open.length, -close.length).trim();
+      break;
+    }
+  }
+  return body;
 }
 
 export function ModuleFrame({

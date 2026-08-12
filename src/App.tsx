@@ -3,7 +3,7 @@ import { useProgress } from './hooks/useProgress';
 import { HomeScreen } from './screens/HomeScreen';
 import { ReaderScreen } from './screens/ReaderScreen';
 import { ChapterSheet } from './screens/Panels';
-import { MusicDock } from './components/MusicDock';
+import { BackgroundMusic } from './components/MusicDock';
 
 export default function App() {
   const prog = useProgress();
@@ -46,7 +46,7 @@ export default function App() {
             onHome={() => setView('home')}
           />
         )}
-        <MusicDock />
+        <BackgroundMusic />
       </div>
 
       {homeChapters && view === 'home' && (

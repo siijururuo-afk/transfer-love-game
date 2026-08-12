@@ -6,6 +6,7 @@
   "description": "换乘恋爱 · 观众视角互动阅读 — 以上帝视角观看既定故事",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/assemble-audio.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "validate": "node scripts/validate.js",

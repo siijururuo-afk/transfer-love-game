@@ -1,7 +1,6 @@
 import React from 'react';
 import type { ReadStep } from '../types/content';
 import { Icon } from '../components/Doodles';
-import { TransitHeart } from '../components/TransitHeart';
 import { MODULE_META, displayBody } from './common';
 import {
   ForumThreadRenderer,
@@ -12,6 +11,8 @@ import {
   SmsStreamRenderer,
   FinalStreamRenderer,
   EpilogueStreamRenderer,
+  VoiceStreamRenderer,
+  SocialStreamRenderer,
 } from './streams';
 
 export interface RenderProps {
@@ -68,45 +69,43 @@ export const FallbackRenderer: React.FC<RenderProps> = ({ step }) => (
 /* ---------- 节目组 ---------- */
 export const ProgramTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
   <article className={'m-task' + (revealed ? ' is-open' : '')}>
-    <div className="m-task__fold" aria-hidden="true" />
     <div className="m-task__head">
-      <span className="m-task__mission">MISSION</span>
-      <span className="m-task__serial">PROGRAM CARD</span>
+      <span className="m-task__mission">PROGRAM CARD</span>
+      <span className="m-task__serial">NO. {step.sourceId.replace(/\D/g, '').slice(-4)}</span>
     </div>
-    <div className="m-task__stamp">换乘<br />恋爱</div>
+    <div className="m-task__route" aria-hidden="true"><i /><span /><i /></div>
     {revealed ? (
       <div className="m-task__rules">
-        {step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-task__rule" />)}
+        {step.items.map((entry) => <Lines key={entry.sourceId} text={entry.text} className="m-task__rule" />)}
       </div>
     ) : (
-      <div className="m-task__closed"><Icon name="stamp" size={30} /><strong>节目组送来一张任务卡</strong><small>抽出卡片查看原文</small></div>
+      <div className="m-task__closed"><strong>节目卡</strong><small>点按后显示内容</small></div>
     )}
   </article>
 );
 
-export const ProgramRuleRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
-  <article className={'m-rule' + (revealed ? ' is-open' : '')}>
-    <div className="m-rule__tape" aria-hidden="true" />
-    <header><span>HOUSE MANUAL</span><strong>入住指南</strong></header>
-    {revealed ? (
-      <div className="m-rule__pages">
-        {step.items.map((entry, index) => (
-          <div className="m-rule__page" key={entry.sourceId} style={{ animationDelay: `${index * .09}s` }}>
-            <span className="m-rule__bullet">{String(index + 1).padStart(2, '0')}</span><Lines text={entry.text} />
-          </div>
-        ))}
-      </div>
-    ) : (
-      <div className="m-rule__locked"><Icon name="note" size={34} /><span>展开墙上的住户手册</span></div>
-    )}
-  </article>
-);
+export const ProgramRuleRenderer: React.FC<RenderProps> = ({ step, revealed }) => {
+  const rules = step.items.filter((entry) => entry.text.trim() !== '入住指南');
+  return (
+    <article className={'m-rule' + (revealed ? ' is-open' : '')}>
+      <header><span>HOUSE GUIDE</span><strong>入住指南</strong></header>
+      {revealed ? (
+        <div className="m-rule__pages">
+          {rules.map((entry, index) => (
+            <div className="m-rule__page" key={entry.sourceId} style={{ animationDelay: `${index * .07}s` }}>
+              <span className="m-rule__bullet">{String(index + 1).padStart(2, '0')}</span><Lines text={entry.text.replace(/^\d+[.、]\s*/, '')} />
+            </div>
+          ))}
+        </div>
+      ) : <div className="m-rule__locked"><span>点按展开完整指南</span></div>}
+    </article>
+  );
+};
 
 export const ProgramNoticeRenderer: React.FC<RenderProps> = ({ step }) => (
   <article className="m-notice">
-    <div className="m-notice__clap" aria-hidden="true">{Array.from({ length: 6 }).map((_, i) => <i key={i} />)}</div>
-    <div className="m-notice__label">PRODUCTION NOTICE</div>
-    <Lines text={step.text} className="m-notice__text" />
+    <div className="m-notice__label"><span>PROGRAM</span><b>节目通知</b></div>
+    <div className="m-notice__copy">{step.items.map((entry) => <Lines key={entry.sourceId} text={entry.text} className="m-notice__text" />)}</div>
   </article>
 );
 
@@ -235,27 +234,33 @@ export const TalkingRoomRenderer: React.FC<RenderProps> = ({ step }) => (
 /* ---------- X ROOM 与身份档案 ---------- */
 export const XRoomRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
   <article className={'m-xroom' + (revealed ? ' is-open' : '')}>
-    <header><span>X ROOM</span><small>MEMORY ARCHIVE</small></header>
-    <div className="m-xroom__scene">
-      <div className="m-xroom__door" aria-hidden="true"><i /></div>
-      <div className="m-xroom__shelf" aria-hidden="true"><i /><i /><i /></div>
-    </div>
+    <header><span>X ROOM</span><small>MEMORY RECORD</small></header>
+    <div className="m-xroom__route" aria-hidden="true"><i /><span /><i /><span /><i /></div>
     {revealed ? (
-      <div className="m-xroom__object"><span>MEMORY OBJECT</span><Lines text={step.text} /></div>
-    ) : (
-      <div className="m-xroom__locked"><Icon name="key" size={22} /><span>门后有一件尚未查看的记忆物件</span></div>
-    )}
+      <div className="m-xroom__archive">
+        {step.items.map((entry) => {
+          const question = /^Q[.．]/.test(entry.text.trim());
+          const quote = /^[“‘\"]/.test(entry.text.trim());
+          return (
+            <div className={`m-xroom__entry ${question ? 'is-question' : ''} ${quote ? 'is-memory' : ''}`} key={entry.sourceId}>
+              {entry.speaker && <small>{entry.speaker}</small>}
+              <Lines text={displayBody(entry.text, entry.speaker)} />
+            </div>
+          );
+        })}
+      </div>
+    ) : <div className="m-xroom__locked"><Icon name="door" size={24} /><span>点按进入记忆记录</span></div>}
   </article>
 );
 
 export const IdentityRevealRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
   <article className={'m-id' + (revealed ? ' is-open' : '')}>
-    <div className="m-id__tab">PROGRAM REVEAL</div>
-    <header><TransitHeart compact /><span>节目公开卡</span><i /></header>
+    <div className="m-id__tab">ON AIR</div>
+    <header><span>节目公开卡</span><i /></header>
     {revealed ? (
       <div className="m-id__data"><span>ON AIR</span>{step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-id__line" />)}</div>
     ) : (
-      <div className="m-id__preview"><TransitHeart /><small>点击后，节目文字将依次浮现</small></div>
+      <div className="m-id__preview"><div className="m-id__redact"><i /><i /><i /></div><small>点按后文字依次浮现</small></div>
     )}
   </article>
 );
@@ -276,7 +281,7 @@ export const DateTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) => {
   return (
     <article className={`m-date m-date--${kind.skin} ${revealed ? 'is-open' : ''}`}>
       <header><Icon name={kind.icon} size={18} /><span>{kind.en}</span><b>{kind.label}</b></header>
-      <div className="m-date__route" aria-hidden="true"><i /><span /><i /></div>
+      <div className="m-date__route" aria-hidden="true"><i /><span /><i /><span /><i /></div>
       {revealed ? (
         <div className="m-date__texts">{step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-date__text" />)}</div>
       ) : <div className="m-date__closed">展开节目约会安排</div>}
@@ -341,18 +346,19 @@ export const MediaRenderer: React.FC<RenderProps> = ({ step }) => {
   const subtype = step.block.subtype || 'image';
   const label = MEDIA_LABEL[subtype] || '媒体';
   const playable = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(subtype);
+  const placeholderOnly = /^\s*[（(](?:图片|视频|动图|截图|YouTube视频)[）)]\s*$/i.test(step.text);
   return (
     <article className="m-media">
       <div className="m-media__frame">
         <header><span>{label}</span><i>{subtype.toUpperCase()}</i></header>
         <div className="m-media__art" aria-label={step.text}>
-          <TransitHeart compact />
+          <div className={`m-media__visual m-media__visual--${subtype}`} aria-hidden="true"><i /><i /><i /><span /></div>
           {playable && <span className="m-media__play"><Icon name="play" size={25} /></span>}
           <span className="sr-only">{step.text}</span>
         </div>
         <div className="m-media__timeline" aria-hidden="true"><i /></div>
       </div>
-      {step.text && <Lines text={step.text} className="m-media__cap" />}
+      {step.text && !placeholderOnly && <Lines text={step.text} className="m-media__cap" />}
     </article>
   );
 };
@@ -383,10 +389,10 @@ export const EpilogueRenderer: React.FC<RenderProps> = ({ step }) => (
 
 export const LyricsRenderer: React.FC<RenderProps> = ({ step }) => (
   <article className="m-lyrics">
-    <header><span>NOW PLAYING</span><strong>LYRICS</strong></header>
-    <TransitHeart />
+    <header><span>LYRICS</span><strong>片尾文字</strong></header>
+    <div className="m-lyrics__linework" aria-hidden="true"><i /><span /><i /></div>
     <div className="m-lyrics__sheet">
-      {step.text.split(/[\n/]+/).map((line, i) => <div className="m-lyrics__line" key={i} style={{ animationDelay: `${i * .12}s` }}>{line}</div>)}
+      {step.items.flatMap((entry) => entry.text.split(/[\n/]+/)).map((line, i) => <div className="m-lyrics__line" key={`${line}-${i}`} style={{ animationDelay: `${i * .08}s` }}>{line}</div>)}
     </div>
   </article>
 );
@@ -425,6 +431,7 @@ export function ContentRenderer({ step, revealed, stream }: RenderProps) {
   switch (step.sceneKind) {
     case 'forum': return <ForumThreadRenderer stream={activeStream} />;
     case 'chat': return <ChatStreamRenderer stream={activeStream} />;
+    case 'voice': return <VoiceStreamRenderer stream={activeStream} />;
     case 'dialogue': return <ChatStreamRenderer stream={activeStream} dialogue />;
     case 'interview': return <InterviewStreamRenderer stream={activeStream} />;
     case 'observation': return <ObservationStreamRenderer stream={activeStream} />;
@@ -432,6 +439,7 @@ export function ContentRenderer({ step, revealed, stream }: RenderProps) {
     case 'sms': return <SmsStreamRenderer stream={activeStream} revealed={revealed} />;
     case 'final': return <FinalStreamRenderer stream={activeStream} />;
     case 'epilogue': return <EpilogueStreamRenderer stream={activeStream} />;
+    case 'social': return <SocialStreamRenderer stream={activeStream} />;
     default: break;
   }
   const Component = MAP[step.block.type] || FallbackRenderer;
