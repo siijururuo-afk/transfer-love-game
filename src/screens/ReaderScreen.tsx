@@ -110,15 +110,37 @@ export const ReaderScreen: React.FC<Props> = ({
   }, [step, state.readSourceIds, jumpToSource]);
 
   const chapterPct = Math.round(((loc.stepIndex + 1) / steps.length) * 100);
-  const totalPct = Math.round((globalIndex / Math.max(1, totalSteps)) * 100);
+  const totalPct = Math.round(((globalIndex + 1) / Math.max(1, totalSteps)) * 100);
+  const episode = Math.max(1, CHAPTER_ORDER.indexOf(loc.chapter) + 1);
+  const moduleType = step?.block.type ?? 'fallback';
+  const revealLabel = (() => {
+    if (!step) return '继续';
+    if (!isRevealed) {
+      switch (moduleType) {
+        case 'letter': return '拆开信封';
+        case 'sms': return '揭晓短信';
+        case 'x_room': return '打开记忆物件';
+        case 'identity_reveal': return '揭晓档案';
+        case 'date_task': return '查看既定安排';
+        case 'finger_game':
+        case 'truth_game': return '翻开卡牌';
+        case 'final_choice': return '查看他的选择';
+        case 'program_task': return '抽出任务卡';
+        case 'program_rule': return '展开入住指南';
+        default: return '点击揭晓';
+      }
+    }
+    return '继续观看';
+  })();
 
   if (inter) {
     return (
-      <div className="reader">
+      <div className="reader reader--inter" data-module="interlude">
         <div className="inter">
           {inter.kind === 'end' ? (
             <>
               <Icon name="star" size={40} />
+              <div className="inter__kicker">END OF PROGRAM</div>
               <div className="inter__big">全剧终</div>
               <div className="inter__sub">你已观看完《换乘恋爱》的全部既定故事。</div>
               <button className="btn btn--primary" onClick={onHome}>返回首页</button>
@@ -127,6 +149,7 @@ export const ReaderScreen: React.FC<Props> = ({
           ) : (
             <>
               <Icon name="flower" size={36} />
+              <div className="inter__kicker">END OF EPISODE</div>
               <div className="inter__big">{loc.chapter} · 阅读完毕</div>
               <div className="inter__sub">下一部分：{inter.to}</div>
               <button className="btn btn--primary" onClick={() => {
@@ -162,18 +185,23 @@ export const ReaderScreen: React.FC<Props> = ({
   }
 
   return (
-    <div className="reader">
+    <div className="reader" data-module={moduleType}>
       <div className="reader__top">
-        <button className="iconbtn" onClick={onHome} aria-label="返回首页"><Icon name="home" /></button>
-        <strong style={{ fontSize: 14 }}>{loc.chapter}</strong>
-        <span className="spacer" />
-        <button className="iconbtn" onClick={() => setPanel('chapters')} aria-label="章节目录"><Icon name="list" /></button>
-        <button className="iconbtn" onClick={() => setPanel('history')} aria-label="历史记录"><Icon name="history" /></button>
-        <button className="iconbtn" onClick={() => setPanel('settings')} aria-label="设置"><Icon name="settings" /></button>
+        <button className="iconbtn iconbtn--plain" onClick={onHome} aria-label="返回首页"><Icon name="home" /></button>
+        <div className="reader__episode">
+          <span>EP {String(episode).padStart(2, '0')}</span>
+          <strong>{loc.chapter}</strong>
+        </div>
+        <div className="reader__module"><Icon name={meta.icon} size={15} /> {meta.label}</div>
+        <button className="iconbtn iconbtn--plain" onClick={() => setPanel('chapters')} aria-label="章节目录"><Icon name="list" /></button>
+        <button className="iconbtn iconbtn--plain" onClick={() => setPanel('settings')} aria-label="设置"><Icon name="settings" /></button>
       </div>
 
-      <div className="reader__bar"><i style={{ width: `${totalPct}%` }} /></div>
-      <div className="reader__hint">当前环节：{meta.label} · 总进度 {totalPct}%</div>
+      <div className="reader__progress">
+        <span>CHAPTER {chapterPct}%</span>
+        <div className="reader__bar"><i style={{ width: `${chapterPct}%` }} /></div>
+        <span>TOTAL {totalPct}%</span>
+      </div>
 
       <div
         className="reader__stage"
@@ -184,17 +212,36 @@ export const ReaderScreen: React.FC<Props> = ({
         aria-label="点击继续阅读"
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); advance(); } }}
       >
-        {step && <ContentRenderer step={step} revealed={isRevealed} />}
-        {!isRevealed && <div className="stage-hint">点击揭晓</div>}
+        <div className="reader__source">
+          <span>{step?.sourceId}</span>
+          <span>{loc.stepIndex + 1} / {steps.length}</span>
+        </div>
+        <div className="reader__canvas">
+          {step && <ContentRenderer step={step} revealed={isRevealed} />}
+        </div>
+        <div className={'reader__tapcue' + (!isRevealed ? ' reader__tapcue--reveal' : '')}>
+          <span>{revealLabel}</span>
+          <Icon name={isRevealed ? 'next' : meta.icon} size={18} />
+        </div>
       </div>
 
       <div className="reader__foot">
-        <button className="iconbtn" onClick={doPrev} disabled={globalIndex === 0} aria-label="上一段"><Icon name="prev" /></button>
-        <span className="apdot" style={state.autoplay ? { background: 'var(--ink)' } : undefined} aria-hidden />
-        <button className="btn btn--sm" onClick={skipRead} aria-label="跳过已读">跳过已读</button>
-        <span className="spacer" />
-        <span style={{ fontSize: 12, color: 'var(--ink-faint)' }}>{loc.stepIndex + 1}/{steps.length}</span>
-        <button className="iconbtn" onClick={advance} aria-label="下一段"><Icon name="next" /></button>
+        <button className="reader__foot-action" onClick={doPrev} disabled={globalIndex === 0} aria-label="上一段">
+          <Icon name="prev" size={18} /><span>上一段</span>
+        </button>
+        <button className="reader__foot-action" onClick={() => setPanel('history')} aria-label="历史记录">
+          <Icon name="history" size={18} /><span>历史</span>
+        </button>
+        <button
+          className={'reader__foot-action' + (state.autoplay ? ' is-on' : '')}
+          onClick={() => updateSettings({ autoplay: !state.autoplay })}
+          aria-label={state.autoplay ? '关闭自动播放' : '开启自动播放'}
+        >
+          <Icon name={state.autoplay ? 'pause' : 'play'} size={18} /><span>自动</span>
+        </button>
+        <button className="reader__foot-action" onClick={skipRead} aria-label="跳过已读">
+          <Icon name="next" size={18} /><span>跳已读</span>
+        </button>
       </div>
 
       {panel === 'settings' && (
