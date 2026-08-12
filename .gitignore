@@ -1,0 +1,24 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist.bak/
+dist.bak2/
+
+# TypeScript 增量编译缓存
+*.tsbuildinfo
+
+# 日志
+*.log
+npm-debug.log*
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本地环境变量
+.env
+.env.local
