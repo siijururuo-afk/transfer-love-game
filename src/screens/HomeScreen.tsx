@@ -27,16 +27,16 @@ export const HomeScreen: React.FC<Props> = ({
   return (
     <div className="home">
       <header className="home__topline">
-        <span className="home__edition">환승연애 · TRANSIT LOVE</span>
-        <span className="home__onair"><i /> EP {String(episode).padStart(2, '0')}</span>
+        <span className="home__edition">TRANSIT LOVE</span>
+        <span className="home__onair">EP {String(episode).padStart(2, '0')} <i /></span>
       </header>
 
       <section className="home__hero" aria-labelledby="home-title">
-        <TransitHeart />
+        <div className="home__route-art"><TransitHeart /></div>
         <div className="home__title-wrap">
-          <span className="home__eyebrow">ORIGINAL STORY · 10 PARTS</span>
+          <span className="home__eyebrow">환승연애</span>
           <h1 className="home__title" id="home-title">换乘恋爱</h1>
-          <span className="home__title-en">TRANSIT LOVE</span>
+          <span className="home__title-en">10 PARTS · INTERACTIVE EDITION</span>
         </div>
       </section>
 
@@ -75,8 +75,7 @@ export const HomeScreen: React.FC<Props> = ({
 
       <footer className="home__footer">
         <span>{manifestData.totalChapters} PARTS</span><i />
-        <span>{read.toLocaleString('zh-CN')} / {total.toLocaleString('zh-CN')}</span><i />
-        <span>SUN OR SUCK</span>
+        <span>{read.toLocaleString('zh-CN')} / {total.toLocaleString('zh-CN')}</span>
       </footer>
     </div>
   );

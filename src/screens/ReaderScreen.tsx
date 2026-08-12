@@ -38,6 +38,7 @@ export const ReaderScreen: React.FC<Props> = ({
   const [panel, setPanel] = useState<null | 'settings' | 'history' | 'chapters'>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLDivElement>(null);
 
   const keyOf = (l: StepLocation, sIdx: number, cIdx: number | null) =>
     `${steps[sIdx]?.sourceId}#${cIdx ?? -1}`;
@@ -70,22 +71,56 @@ export const ReaderScreen: React.FC<Props> = ({
         return n;
       });
     }
-    const frame = window.requestAnimationFrame(() => {
-      const stage = stageRef.current;
-      if (!stage) return;
-      if (step.sceneKey && sceneStream.length > 1) {
-        stage.scrollTo({ top: stage.scrollHeight, behavior: state.reduceMotion ? 'auto' : 'smooth' });
-      } else {
-        stage.scrollTo({ top: 0 });
-      }
+    let secondFrame = 0;
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
+        const stage = stageRef.current;
+        if (!stage) return;
+        stage.scrollTo({
+          top: step.sceneKey && sceneStream.length > 1 ? stage.scrollHeight : 0,
+          behavior: step.sceneKey && sceneStream.length > 1 && !state.reduceMotion ? 'smooth' : 'auto',
+        });
+      });
     });
-    return () => window.cancelAnimationFrame(frame);
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+    };
   }, [curKey, step, isBlocking, markRead, sceneStream.length, state.reduceMotion]);
+
+  // Animated/cumulative modules may grow after React has painted. Keep the newest
+  // message, comment or event in view without asking the reader to drag the page.
+  useEffect(() => {
+    if (!step?.sceneKey || sceneStream.length < 2 || !canvasRef.current) return;
+    let frame = 0;
+    const follow = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        const stage = stageRef.current;
+        if (stage) stage.scrollTo({ top: stage.scrollHeight, behavior: state.reduceMotion ? 'auto' : 'smooth' });
+      });
+    };
+    const observer = new MutationObserver(follow);
+    observer.observe(canvasRef.current, { childList: true, subtree: true, attributes: true });
+    follow();
+    const timer = window.setTimeout(follow, 340);
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [step?.sceneKey, sceneStream.length, state.reduceMotion]);
 
   const advance = useCallback(() => {
     if (!step) return;
     if (isBlocking && !revealed.has(curKey)) {
       setRevealed((s) => new Set(s).add(curKey));
+      window.requestAnimationFrame(() => stageRef.current?.scrollTo({ top: 0, behavior: 'auto' }));
+      return;
+    }
+    const stage = stageRef.current;
+    if (stage && stage.scrollHeight - stage.clientHeight - stage.scrollTop > 24) {
+      stage.scrollBy({ top: Math.max(220, stage.clientHeight * 0.72), behavior: state.reduceMotion ? 'auto' : 'smooth' });
       return;
     }
     const n = nextLocation(loc);
@@ -164,7 +199,7 @@ export const ReaderScreen: React.FC<Props> = ({
               <Icon name="star" size={40} />
               <div className="inter__kicker">END OF PROGRAM</div>
               <div className="inter__big">全剧终</div>
-              <div className="inter__sub">你已观看完《换乘恋爱》的全部既定故事。</div>
+              <div className="inter__sub">《换乘恋爱》全部内容播放完毕。</div>
               <button className="btn btn--primary" onClick={onHome}>返回首页</button>
               <button className="btn btn--ghost" onClick={() => { setConfirmReset(true); }}>重新开始</button>
             </>
@@ -234,11 +269,7 @@ export const ReaderScreen: React.FC<Props> = ({
         aria-label="点击继续阅读"
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); advance(); } }}
       >
-        <div className="reader__source">
-          <span>{step?.sourceIds.length > 1 ? `${step.sourceIds[0]}—${step.sourceIds[step.sourceIds.length - 1]}` : step?.sourceId}</span>
-          <span>{loc.stepIndex + 1} / {steps.length}</span>
-        </div>
-        <div className="reader__canvas">
+        <div className="reader__canvas" ref={canvasRef}>
           {step && <ContentRenderer step={step} revealed={isRevealed} stream={sceneStream} />}
         </div>
         <div className={'reader__tapcue' + (!isRevealed ? ' reader__tapcue--reveal' : '')}>

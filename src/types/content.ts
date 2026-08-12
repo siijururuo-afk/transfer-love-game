@@ -64,6 +64,7 @@ export type SceneKind =
   | 'single'
   | 'forum'
   | 'chat'
+  | 'voice'
   | 'dialogue'
   | 'interview'
   | 'observation'

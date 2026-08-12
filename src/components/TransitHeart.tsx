@@ -3,20 +3,17 @@ import React from 'react';
 export const TransitHeart: React.FC<{ compact?: boolean; className?: string }> = ({ compact = false, className = '' }) => (
   <svg
     className={`transit-heart ${compact ? 'transit-heart--compact' : ''} ${className}`}
-    viewBox="0 0 320 270"
+    viewBox="0 0 320 220"
     role="img"
-    aria-label="由地铁线路组成的爱心"
+    aria-label="换乘线路图形"
   >
-    <path className="transit-heart__ghost" d="M24 155 C65 113 69 55 119 49 C146 46 159 65 160 87 C161 62 180 43 208 48 C264 58 269 121 299 156" />
-    <path className="transit-heart__line transit-heart__line--ink" d="M29 150 L74 107 L91 66 L130 54 L160 86 L191 54 L232 69 L251 110 L294 151 L249 191 L209 226 L160 252 L111 226 L70 191 Z" />
-    <path className="transit-heart__line transit-heart__line--pink" d="M45 174 L92 158 L125 177 L160 159 L195 177 L229 158 L277 174" />
-    <path className="transit-heart__line transit-heart__line--blue" d="M72 109 L110 128 L160 86 L210 128 L251 110" />
-    <path className="transit-heart__line transit-heart__line--yellow" d="M91 66 L111 226 M232 69 L209 226" />
-    {[
-      [29,150],[74,107],[91,66],[130,54],[160,86],[191,54],[232,69],[251,110],[294,151],
-      [249,191],[209,226],[160,252],[111,226],[70,191],[92,158],[125,177],[160,159],[195,177],[229,158],
-      [110,128],[210,128],
-    ].map(([cx, cy], index) => <circle key={index} cx={cx} cy={cy} r={index % 4 === 0 ? 6 : 4.5} />)}
-    {!compact && <text x="160" y="142" textAnchor="middle">TRANSIT LOVE</text>}
+    <path className="transit-heart__ghost" d="M18 183 C64 165 83 133 115 120 C171 97 225 122 302 83" />
+    <path className="transit-heart__ghost" d="M24 44 C88 31 108 77 151 84 C207 93 238 57 298 52" />
+    <path className="transit-heart__line transit-heart__line--ink" d="M160 202 C139 182 54 123 54 72 C54 38 79 18 111 18 C136 18 151 35 160 53 C169 35 184 18 209 18 C241 18 266 38 266 72 C266 123 181 182 160 202" />
+    <path className="transit-heart__line transit-heart__line--blue" d="M22 158 C76 158 105 121 150 104 C199 85 252 94 299 50" />
+    <path className="transit-heart__line transit-heart__line--pink" d="M26 50 C93 50 104 175 160 175 C216 175 230 53 296 53" />
+    {[[54,72],[76,124],[118,167],[160,202],[202,167],[245,121],[266,72],[111,18],[160,53],[209,18],[22,158],[96,140],[150,104],[224,92],[299,50],[26,50],[93,76],[128,143],[160,175],[196,139],[230,91],[296,53]].map(([cx, cy], index) => (
+      <circle key={index} cx={cx} cy={cy} r={index % 5 === 0 ? 5.5 : 3.8} />
+    ))}
   </svg>
 );
