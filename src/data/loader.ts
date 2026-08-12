@@ -1,4 +1,5 @@
 import type { ContentBlock, Manifest, ReadStep } from '../types/content';
+import { buildPresentationSteps } from '../utils/presentation';
 import manifest from '../data/manifest.json';
 
 import ch01 from '../data/chapter-01.json';
@@ -57,27 +58,30 @@ export function buildSteps(block: ContentBlock): ReadStep[] {
   if (block.childSegments && block.childSegments.length > 0) {
     return block.childSegments.map((seg) => ({
       sourceId: block.sourceId,
+      sourceIds: [block.sourceId],
       block,
       childIndex: seg.order - 1,
       text: seg.text,
       speaker: seg.speaker,
+      items: [{ sourceId: block.sourceId, type: block.type, subtype: block.subtype, speaker: block.speaker, text: block.text }],
+      sceneKind: 'single',
     }));
   }
   return [
     {
       sourceId: block.sourceId,
+      sourceIds: [block.sourceId],
       block,
       childIndex: null,
       text: block.text,
       speaker: block.speaker,
+      items: [{ sourceId: block.sourceId, type: block.type, subtype: block.subtype, speaker: block.speaker, text: block.text }],
+      sceneKind: 'single',
     },
   ];
 }
 
 // Build the full ordered step list for a chapter.
 export function buildChapterSteps(chapterName: string): ReadStep[] {
-  const blocks = getChapter(chapterName);
-  const steps: ReadStep[] = [];
-  for (const b of blocks) steps.push(...buildSteps(b));
-  return steps;
+  return buildPresentationSteps(getChapter(chapterName));
 }

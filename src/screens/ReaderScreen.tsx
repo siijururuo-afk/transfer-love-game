@@ -26,6 +26,12 @@ export const ReaderScreen: React.FC<Props> = ({
   const loc = state.current;
   const steps = useMemo(() => chapterSteps(loc.chapter), [loc.chapter]);
   const step = steps[loc.stepIndex];
+  const sceneStream = useMemo(() => {
+    if (!step?.sceneKey) return step ? [step] : [];
+    let start = loc.stepIndex;
+    while (start > 0 && steps[start - 1]?.sceneKey === step.sceneKey) start -= 1;
+    return steps.slice(start, loc.stepIndex + 1);
+  }, [step, steps, loc.stepIndex]);
 
   const [revealed, setRevealed] = useState<Set<string>>(new Set());
   const [inter, setInter] = useState<Inter>(null);
@@ -55,7 +61,7 @@ export const ReaderScreen: React.FC<Props> = ({
   // mark read + auto-reveal non-blocking on step change
   useEffect(() => {
     if (!step) return;
-    markRead(step.sourceId);
+    for (const sourceId of step.sourceIds) markRead(sourceId);
     if (!isBlocking) {
       setRevealed((s) => {
         if (s.has(curKey)) return s;
@@ -64,8 +70,17 @@ export const ReaderScreen: React.FC<Props> = ({
         return n;
       });
     }
-    stageRef.current?.scrollTo({ top: 0 });
-  }, [curKey, step, isBlocking, markRead]);
+    const frame = window.requestAnimationFrame(() => {
+      const stage = stageRef.current;
+      if (!stage) return;
+      if (step.sceneKey && sceneStream.length > 1) {
+        stage.scrollTo({ top: stage.scrollHeight, behavior: state.reduceMotion ? 'auto' : 'smooth' });
+      } else {
+        stage.scrollTo({ top: 0 });
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [curKey, step, isBlocking, markRead, sceneStream.length, state.reduceMotion]);
 
   const advance = useCallback(() => {
     if (!step) return;
@@ -79,8 +94,17 @@ export const ReaderScreen: React.FC<Props> = ({
       setInter({ kind: 'chapter', to: n.chapter });
       return;
     }
+    const incoming = steps[n.stepIndex];
+    if (
+      !state.reduceMotion
+      && incoming?.sceneKind === 'forum'
+      && incoming.sceneKey === step.sceneKey
+      && incoming.block.subtype === 'comment'
+    ) {
+      try { navigator.vibrate?.(12); } catch { /* vibration is optional */ }
+    }
     goTo(n);
-  }, [step, isBlocking, revealed, curKey, loc, goTo]);
+  }, [step, isBlocking, revealed, curKey, loc, goTo, steps, state.reduceMotion]);
 
   const doPrev = useCallback(() => {
     prev();
@@ -120,10 +144,8 @@ export const ReaderScreen: React.FC<Props> = ({
         case 'letter': return '拆开信封';
         case 'sms': return '揭晓短信';
         case 'x_room': return '打开记忆物件';
-        case 'identity_reveal': return '揭晓档案';
-        case 'date_task': return '查看既定安排';
-        case 'finger_game':
-        case 'truth_game': return '翻开卡牌';
+        case 'identity_reveal': return '展开节目公开卡';
+        case 'date_task': return '展开约会安排';
         case 'final_choice': return '查看他的选择';
         case 'program_task': return '抽出任务卡';
         case 'program_rule': return '展开入住指南';
@@ -213,11 +235,11 @@ export const ReaderScreen: React.FC<Props> = ({
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); advance(); } }}
       >
         <div className="reader__source">
-          <span>{step?.sourceId}</span>
+          <span>{step?.sourceIds.length > 1 ? `${step.sourceIds[0]}—${step.sourceIds[step.sourceIds.length - 1]}` : step?.sourceId}</span>
           <span>{loc.stepIndex + 1} / {steps.length}</span>
         </div>
         <div className="reader__canvas">
-          {step && <ContentRenderer step={step} revealed={isRevealed} />}
+          {step && <ContentRenderer step={step} revealed={isRevealed} stream={sceneStream} />}
         </div>
         <div className={'reader__tapcue' + (!isRevealed ? ' reader__tapcue--reveal' : '')}>
           <span>{revealLabel}</span>

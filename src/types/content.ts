@@ -52,6 +52,27 @@ export interface ContentBlock {
   metadata?: Record<string, unknown>;
 }
 
+export interface PresentationItem {
+  sourceId: string;
+  type: ContentType;
+  subtype?: string;
+  speaker?: string;
+  text: string;
+}
+
+export type SceneKind =
+  | 'single'
+  | 'forum'
+  | 'chat'
+  | 'dialogue'
+  | 'interview'
+  | 'observation'
+  | 'game'
+  | 'sms'
+  | 'final'
+  | 'epilogue'
+  | 'social';
+
 export interface ChapterMeta {
   id: number;
   name: string;
@@ -74,8 +95,12 @@ export interface Manifest {
 // A flat "display step" consumed by the reader.
 export interface ReadStep {
   sourceId: string;
+  sourceIds: string[];
   block: ContentBlock;
   childIndex: number | null; // null = whole block; otherwise index into childSegments
   text: string; // text to display for this step
   speaker?: string;
+  items: PresentationItem[];
+  sceneKey?: string;
+  sceneKind?: SceneKind;
 }
