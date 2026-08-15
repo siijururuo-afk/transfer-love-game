@@ -18,7 +18,7 @@ export default function App() {
     setView('reader');
   };
 
-  const phoneStyle = { '--fs': `${17 * prog.state.fontScale}px` } as React.CSSProperties;
+  const phoneStyle = { '--fs': `${14.5 * prog.state.fontScale}px` } as React.CSSProperties;
 
   return (
     <div className="app">

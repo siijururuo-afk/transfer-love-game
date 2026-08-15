@@ -116,22 +116,16 @@ export const ReaderScreen: React.FC<Props> = ({
   const advance = useCallback(() => {
     if (!step) return;
     if (isBlocking && !revealed.has(curKey)) {
+      if (step.block.type === 'sms') {
+        try { navigator.vibrate?.([18, 34, 18]); } catch { /* vibration is optional */ }
+      }
       setRevealed((s) => new Set(s).add(curKey));
       window.requestAnimationFrame(() => stageRef.current?.scrollTo({ top: 0, behavior: 'auto' }));
       return;
     }
-    const stage = stageRef.current;
-    if (stage && stage.scrollHeight - stage.clientHeight - stage.scrollTop > 24) {
-      stage.scrollBy({ top: Math.max(220, stage.clientHeight * 0.72), behavior: state.reduceMotion ? 'auto' : 'smooth' });
-      return;
-    }
     const n = nextLocation(loc);
     if (!n) { setInter({ kind: 'end' }); return; }
-    if (n.chapter !== loc.chapter) {
-      setInter({ kind: 'chapter', to: n.chapter });
-      return;
-    }
-    const incoming = steps[n.stepIndex];
+    const incoming = n.chapter === loc.chapter ? steps[n.stepIndex] : undefined;
     if (
       !state.reduceMotion
       && incoming?.sceneKind === 'forum'
@@ -174,24 +168,6 @@ export const ReaderScreen: React.FC<Props> = ({
   const totalPct = Math.round(((globalIndex + 1) / Math.max(1, totalSteps)) * 100);
   const episode = Math.max(1, CHAPTER_ORDER.indexOf(loc.chapter) + 1);
   const moduleType = step?.block.type ?? 'fallback';
-  const revealLabel = (() => {
-    if (!step) return '继续';
-    if (!isRevealed) {
-      switch (moduleType) {
-        case 'letter': return '拆开信封';
-        case 'sms': return '揭晓短信';
-        case 'x_room': return '打开记忆物件';
-        case 'identity_reveal': return '展开节目公开卡';
-        case 'date_task': return '展开约会安排';
-        case 'final_choice': return '查看他的选择';
-        case 'program_task': return '抽出任务卡';
-        case 'program_rule': return '展开入住指南';
-        default: return '点击揭晓';
-      }
-    }
-    return '继续观看';
-  })();
-
   if (inter) {
     return (
       <div className="reader reader--inter" data-module="interlude">
@@ -273,10 +249,6 @@ export const ReaderScreen: React.FC<Props> = ({
       >
         <div className="reader__canvas" ref={canvasRef}>
           {step && <ContentRenderer step={step} revealed={isRevealed} stream={sceneStream} />}
-        </div>
-        <div className={'reader__tapcue' + (!isRevealed ? ' reader__tapcue--reveal' : '')}>
-          <span>{revealLabel}</span>
-          <Icon name={isRevealed ? 'next' : meta.icon} size={18} />
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Icon } from '../components/Doodles';
-import { TransitHeart } from '../components/TransitHeart';
 import { CHAPTER_ORDER, manifestData } from '../data/loader';
 import type { ProgressState } from '../hooks/useProgress';
 
@@ -32,11 +31,10 @@ export const HomeScreen: React.FC<Props> = ({
       </header>
 
       <section className="home__hero" aria-labelledby="home-title">
-        <div className="home__route-art"><TransitHeart /></div>
         <div className="home__title-wrap">
-          <span className="home__eyebrow">환승연애</span>
+          <span className="home__eyebrow">TRANSFER LOVE</span>
           <h1 className="home__title" id="home-title">换乘恋爱</h1>
-          <span className="home__title-en">10 PARTS · INTERACTIVE EDITION</span>
+          <span className="home__title-en">환승연애 · INTERACTIVE READING</span>
         </div>
       </section>
 
@@ -58,7 +56,7 @@ export const HomeScreen: React.FC<Props> = ({
           onClick={hasProgress ? onContinue : onRestart}
           aria-label={hasProgress ? '继续阅读' : '开始观看'}
         >
-          <span>{hasProgress ? '继续观看' : '开始观看'}</span>
+          <span>{hasProgress ? '继续阅读' : '开始阅读'}</span>
           <Icon name="next" size={20} />
         </button>
         <div className="home__action-row">

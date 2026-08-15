@@ -7,12 +7,9 @@ import {
   ChatStreamRenderer,
   InterviewStreamRenderer,
   ObservationStreamRenderer,
-  GameStreamRenderer,
   SmsStreamRenderer,
-  FinalStreamRenderer,
-  EpilogueStreamRenderer,
+  PlainReadingStreamRenderer,
   VoiceStreamRenderer,
-  XRoomStreamRenderer,
   SocialStreamRenderer,
 } from './streams';
 
@@ -77,13 +74,22 @@ export const NarrativeRenderer: React.FC<RenderProps> = ({ step }) => {
   );
 };
 
-export const DialogueRenderer: React.FC<RenderProps> = ({ step }) => (
-  <article className="m-dialogue">
-    <div className="m-dialogue__rail" aria-hidden="true"><span /><i /></div>
-    {step.speaker && <div className="m-dialogue__name">{step.speaker}</div>}
-    <Lines text={displayBody(step.text, step.speaker)} className="m-dialogue__text" />
-  </article>
-);
+export const DialogueRenderer: React.FC<RenderProps> = ({ step }) => {
+  const tone = /宇硕/.test(step.speaker || '')
+    ? 'speaker--wooseok'
+    : /承衍/.test(step.speaker || '') ? 'speaker--seungyoun' : 'speaker--support';
+  const side = tone === 'speaker--support' ? 'left' : 'right';
+  return (
+    <article className="dialogue-flow">
+      <div className="message-flow">
+        <div className={`message-flow__row message-flow__row--${side} ${tone}`}>
+          {step.speaker && <small>{step.speaker}</small>}
+          <Lines text={displayBody(step.text, step.speaker)} className="message-flow__bubble" />
+        </div>
+      </div>
+    </article>
+  );
+};
 
 export const SceneCardRenderer: React.FC<RenderProps> = ({ step }) => {
   const night = /夜|凌晨|深夜|傍晚|月亮|晚/.test(step.text);
@@ -122,7 +128,7 @@ export const ProgramTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) =
         {step.items.map((entry) => <Lines key={entry.sourceId} text={entry.text} className="m-task__rule" />)}
       </div>
     ) : (
-      <div className="m-task__closed"><strong>节目卡</strong><small>点按后显示内容</small></div>
+      <div className="m-task__closed"><strong>节目卡</strong><small>PROGRAM CARD</small></div>
     )}
   </article>
 );
@@ -140,7 +146,7 @@ export const ProgramRuleRenderer: React.FC<RenderProps> = ({ step, revealed }) =
             </div>
           ))}
         </div>
-      ) : <div className="m-rule__locked"><span>点按展开完整指南</span></div>}
+      ) : <div className="m-rule__locked"><span>HOUSE GUIDE</span></div>}
     </article>
   );
 };
@@ -161,7 +167,7 @@ export const LetterRenderer: React.FC<RenderProps> = ({ step, revealed }) => {
           <div className="m-envelope__back" aria-hidden="true" />
           <div className="m-envelope__flap" aria-hidden="true" />
           <div className="m-envelope__seal">X</div>
-          <div className="m-envelope__prompt"><span>LETTER</span><strong>一封尚未拆开的信</strong></div>
+          <div className="m-envelope__prompt"><span>LETTER</span><strong>X 的信</strong></div>
         </div>
       </article>
     );
@@ -198,7 +204,6 @@ export const SmsRenderer: React.FC<RenderProps> = ({ step, revealed }) => {
           <div className="m-sms__locked">
             <div className="m-sms__pulse"><Icon name="mail" size={24} /></div>
             <strong>收到一条新消息</strong>
-            <small>内容将在点按后显示</small>
           </div>
         ) : result ? (
           <Lines text={step.text} className="m-sms__result" />
@@ -292,7 +297,7 @@ export const XRoomRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
           );
         })}
       </div>
-    ) : <div className="m-xroom__locked"><Icon name="door" size={24} /><span>点按进入记忆记录</span></div>}
+    ) : <div className="m-xroom__locked"><Icon name="door" size={24} /><span>X ROOM</span></div>}
   </article>
 );
 
@@ -303,7 +308,7 @@ export const IdentityRevealRenderer: React.FC<RenderProps> = ({ step, revealed }
     {revealed ? (
       <div className="m-id__data"><span>ON AIR</span>{step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-id__line" />)}</div>
     ) : (
-      <div className="m-id__preview"><div className="m-id__redact"><i /><i /><i /></div><small>点按后文字依次浮现</small></div>
+      <div className="m-id__preview"><div className="m-id__redact"><i /><i /><i /></div><small>PROGRAM CARD</small></div>
     )}
   </article>
 );
@@ -327,7 +332,7 @@ export const DateTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) => {
       <div className="m-date__route" aria-hidden="true"><i /><span /><i /><span /><i /></div>
       {revealed ? (
         <div className="m-date__texts">{step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-date__text" />)}</div>
-      ) : <div className="m-date__closed">展开节目约会安排</div>}
+      ) : <div className="m-date__closed">{kind.en}</div>}
       <div className="m-date__corner" aria-hidden="true">{kind.skin === 'secret' ? '◐' : kind.skin === 'x' ? 'X' : '♡'}</div>
     </article>
   );
@@ -338,7 +343,7 @@ const GameCard: React.FC<RenderProps & { title: string; token: string }> = ({ st
   <article className="m-game">
     <div className={'m-game__card' + (revealed ? ' is-flipped' : '')}>
       <header><span>{title}</span><b>{token}</b></header>
-      {revealed ? <Lines text={step.text} className="m-game__q" /> : <div className="m-game__back"><Icon name="card" size={34} /><span>点击翻牌</span></div>}
+      {revealed ? <Lines text={step.text} className="m-game__q" /> : <div className="m-game__back"><Icon name="card" size={34} /><span>{title}</span></div>}
     </div>
     <div className="m-game__chips" aria-hidden="true"><i>1</i><i>2</i><i>↺</i></div>
   </article>
@@ -387,21 +392,11 @@ const MEDIA_LABEL: Record<string, string> = {
 };
 export const MediaRenderer: React.FC<RenderProps> = ({ step }) => {
   const subtype = step.block.subtype || 'image';
-  const variant = Number(step.sourceId.replace(/\D/g, '')) % 4;
   const label = MEDIA_LABEL[subtype] || '媒体';
-  const playable = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(subtype);
   const placeholderOnly = /^\s*[（(](?:图片|视频|动图|截图|YouTube视频)[）)]\s*$/i.test(step.text);
   return (
-    <article className={`m-media m-media--variant-${variant}`}>
-      <div className="m-media__frame">
-        <header><span>{label}</span><i>{subtype.toUpperCase()}</i></header>
-        <div className="m-media__art" aria-label={step.text}>
-          <div className={`m-media__visual m-media__visual--${subtype}`} aria-hidden="true"><i /><i /><i /><span /></div>
-          {playable && <span className="m-media__play"><Icon name="play" size={25} /></span>}
-          <span className="sr-only">{step.text}</span>
-        </div>
-        <div className="m-media__timeline" aria-hidden="true"><i /></div>
-      </div>
+    <article className="m-media-inline">
+      <span>（{label}）</span>
       {step.text && !placeholderOnly && <Lines text={step.text} className="m-media__cap" />}
     </article>
   );
@@ -454,18 +449,18 @@ const MAP: Record<string, React.FC<RenderProps>> = {
   observation_room: ObservationRoomRenderer,
   text_chat: TextChatRenderer,
   talking_room: TalkingRoomRenderer,
-  x_room: XRoomRenderer,
+  x_room: NarrativeRenderer,
   identity_reveal: IdentityRevealRenderer,
   date_task: DateTaskRenderer,
-  finger_game: FingerGameRenderer,
-  truth_game: TruthGameRenderer,
+  finger_game: NarrativeRenderer,
+  truth_game: NarrativeRenderer,
   interlude: InterludeRenderer,
   forum: ForumRenderer,
   social_media: SocialMediaRenderer,
   media: MediaRenderer,
   program_caption: ProgramCaptionRenderer,
-  final_choice: FinalChoiceRenderer,
-  epilogue: EpilogueRenderer,
+  final_choice: NarrativeRenderer,
+  epilogue: NarrativeRenderer,
   lyrics: LyricsRenderer,
   fallback: FallbackRenderer,
 };
@@ -476,14 +471,14 @@ export function ContentRenderer({ step, revealed, stream }: RenderProps) {
     case 'forum': return <ForumThreadRenderer stream={activeStream} />;
     case 'chat': return <ChatStreamRenderer stream={activeStream} />;
     case 'voice': return <VoiceStreamRenderer stream={activeStream} />;
-    case 'xroom': return <XRoomStreamRenderer stream={activeStream} revealed={revealed} />;
+    case 'xroom': return <PlainReadingStreamRenderer stream={activeStream} kind="xroom" />;
     case 'dialogue': return <ChatStreamRenderer stream={activeStream} dialogue />;
     case 'interview': return <InterviewStreamRenderer stream={activeStream} />;
     case 'observation': return <ObservationStreamRenderer stream={activeStream} />;
-    case 'game': return <GameStreamRenderer stream={activeStream} truth={step.block.type === 'truth_game'} />;
+    case 'game': return <PlainReadingStreamRenderer stream={activeStream} kind={step.block.type === 'truth_game' ? 'truth' : 'finger'} />;
     case 'sms': return <SmsStreamRenderer stream={activeStream} revealed={revealed} />;
-    case 'final': return <FinalStreamRenderer stream={activeStream} />;
-    case 'epilogue': return <EpilogueStreamRenderer stream={activeStream} />;
+    case 'final': return <PlainReadingStreamRenderer stream={activeStream} kind="final" />;
+    case 'epilogue': return <PlainReadingStreamRenderer stream={activeStream} kind="epilogue" />;
     case 'social': return <SocialStreamRenderer stream={activeStream} />;
     default: break;
   }

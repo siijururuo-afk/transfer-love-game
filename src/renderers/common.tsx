@@ -21,7 +21,7 @@ export const MODULE_META: Record<ContentType, ModuleMeta> = {
   observation_room: { label: '观察室', icon: 'observer', blocking: false },
   text_chat: { label: '聊天室', icon: 'chat', blocking: false },
   talking_room: { label: 'Talking Room', icon: 'mic', blocking: false },
-  x_room: { label: 'X ROOM', icon: 'door', blocking: true },
+  x_room: { label: 'X ROOM', icon: 'door', blocking: false },
   identity_reveal: { label: '节目公开', icon: 'route', blocking: true },
   date_task: { label: '约会', icon: 'heart', blocking: true },
   finger_game: { label: '手指游戏', icon: 'card', blocking: false },

@@ -1,7 +1,6 @@
 import React from 'react';
 import type { PresentationItem, ReadStep } from '../types/content';
 import { Icon } from '../components/Doodles';
-import { TransitHeart } from '../components/TransitHeart';
 import { displayBody } from './common';
 
 const Lines: React.FC<{ text: string; className?: string }> = ({ text, className }) => (
@@ -39,14 +38,13 @@ export function forumTitle(text: string): string {
 }
 
 const RouteMedia: React.FC<{ entry: PresentationItem }> = ({ entry }) => {
-  const video = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(entry.subtype || '');
   const subtype = entry.subtype || 'image';
-  const variant = Number(entry.sourceId.replace(/\D/g, '')) % 4;
+  const label = ['video', 'youtube', 'preview', 'early_release', 'sneak_peek'].includes(subtype)
+    ? '视频'
+    : subtype === 'gif' ? '动图' : subtype === 'screenshot' ? '截图' : '图片';
   return (
-    <div className={`route-media route-media--${subtype} route-media--variant-${variant} ${video ? 'route-media--video' : 'route-media--photo'}`} aria-label={entry.text}>
-      <div className="route-media__visual" aria-hidden="true"><i /><i /><i /><span /></div>
-      {video && <span className="route-media__play"><Icon name="play" size={24} /></span>}
-      <span className="sr-only">{entry.text}</span>
+    <div className="route-media-inline" aria-label={entry.text}>
+      （{label}）
     </div>
   );
 };
@@ -125,7 +123,6 @@ export const ChatStreamRenderer: React.FC<{ stream: ReadStep[]; dialogue?: boole
           <small>只读记录</small>
         </header>
       )}
-      {dialogue && <div className="dialogue-flow__route"><span className="route-dot route-dot--blue" /><i /><span className="route-dot route-dot--pink" /><b>CONVERSATION</b></div>}
       <div className="message-flow">
         {stream.map((step, index) => {
           const side = sideFor(step.speaker, names);
@@ -167,6 +164,56 @@ export const VoiceStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }
   );
 };
 
+function plainLabel(kind: 'xroom' | 'truth' | 'finger' | 'final' | 'epilogue'): string {
+  if (kind === 'xroom') return 'X ROOM';
+  if (kind === 'truth') return '真心话';
+  if (kind === 'finger') return '手指游戏';
+  if (kind === 'final') return '最终选择';
+  return '以及现在';
+}
+
+export const PlainReadingStreamRenderer: React.FC<{
+  stream: ReadStep[];
+  kind: 'xroom' | 'truth' | 'finger' | 'final' | 'epilogue';
+}> = ({ stream, kind }) => {
+  const names = participants(stream);
+  const entries = stream.flatMap((step) => step.items.length ? step.items : [{
+    sourceId: step.sourceId,
+    type: step.block.type,
+    subtype: step.block.subtype,
+    speaker: step.speaker,
+    text: step.text,
+  }]);
+  return (
+    <article className="plain-reading-flow">
+      <div className="plain-reading-flow__label">{plainLabel(kind)}</div>
+      {entries.map((entry, index) => {
+        if (entry.type === 'media') return <RouteMedia key={entry.sourceId} entry={entry} />;
+        const spoken = entry.type === 'dialogue' || Boolean(entry.speaker);
+        if (spoken) {
+          const side = sideFor(entry.speaker, names);
+          return (
+            <div
+              className={`message-flow__row message-flow__row--${side === 'system' ? 'left' : side} ${speakerTone(entry.speaker)} ${index === entries.length - 1 ? 'is-new' : ''}`}
+              key={entry.sourceId}
+            >
+              {entry.speaker && <small>{entry.speaker}</small>}
+              <Lines text={displayBody(entry.text, entry.speaker)} className="message-flow__bubble" />
+            </div>
+          );
+        }
+        return (
+          <Lines
+            key={entry.sourceId}
+            text={entry.text}
+            className={`plain-reading-flow__copy ${index === entries.length - 1 ? 'is-new' : ''}`}
+          />
+        );
+      })}
+    </article>
+  );
+};
+
 export const XRoomStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean }> = ({ stream, revealed }) => {
   const entries = stream.flatMap((step) => step.items);
   return (
@@ -178,8 +225,7 @@ export const XRoomStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boole
       {!revealed ? (
         <div className="xroom-flow__door">
           <Icon name="door" size={34} />
-          <strong>进入 X ROOM</strong>
-          <span>点按后按原文顺序查看</span>
+          <strong>X ROOM</strong>
         </div>
       ) : (
         <div className="xroom-flow__archive">
@@ -217,7 +263,6 @@ export const InterviewStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stre
       <header>
         <div className="interview-flow__rec"><i /> REC</div>
         <div><strong>{name}</strong><span>INTERVIEW</span></div>
-        <TransitHeart compact />
       </header>
       <div className="interview-flow__questions">
         {stream.map((step, index) => {
@@ -274,11 +319,11 @@ export const GameStreamRenderer: React.FC<{ stream: ReadStep[]; truth?: boolean 
 
 export const SmsStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean }> = ({ stream, revealed }) => (
   <article className="sms-flow">
-    <header><span>9:41</span><strong>节目短信</strong><i>•••</i></header>
-    <div className="sms-flow__thread">
+    <header><span>短信</span><strong>节目通知</strong><i>•••</i></header>
+    <div className="sms-flow__thread" aria-live="polite">
       {stream.map((step, index) => {
         const current = index === stream.length - 1;
-        if (current && !revealed) return <div className="sms-flow__notice is-new" key={step.sourceId}><Icon name="mail" size={20} /><span>收到一条新消息</span></div>;
+        if (current && !revealed) return <div className="sms-flow__notice is-new" key={step.sourceId}><span>节目组</span><strong>收到一条新消息</strong></div>;
         return <Lines key={`${step.sourceId}-${index}`} text={step.text} className={`sms-flow__bubble ${current ? 'is-new' : ''}`} />;
       })}
     </div>
@@ -288,7 +333,7 @@ export const SmsStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean
 
 export const FinalStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }) => (
   <article className="final-flow">
-    <header><TransitHeart compact /><div><span>FINAL CHOICE</span><strong>最终选择</strong></div></header>
+    <header><div><span>FINAL CHOICE</span><strong>最终选择</strong></div></header>
     <div className="final-flow__route">
       {stream.map((step, index) => (
         <div className={`final-flow__event final-flow__event--${step.block.subtype || 'step'} ${index === stream.length - 1 ? 'is-new' : ''}`} key={`${step.sourceId}-${index}`}>
@@ -302,7 +347,7 @@ export const FinalStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }
 
 export const EpilogueStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }) => (
   <article className="epilogue-flow">
-    <header><span>AND NOW</span><strong>以及现在</strong><TransitHeart compact /></header>
+    <header><span>AND NOW</span><strong>以及现在</strong></header>
     <div className="epilogue-flow__film">
       {stream.map((step, index) => {
         const spoken = /^\s*[“‘"']/.test(step.text);
