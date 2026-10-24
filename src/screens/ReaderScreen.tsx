@@ -220,7 +220,8 @@ export const ReaderScreen: React.FC<Props> = ({
   }
 
   return (
-    <div className="reader" data-module={moduleType}>
+    <div className="reader" data-module={moduleType} data-surface={step?.sceneKind || moduleType}>
+      <div className="phone-status" aria-hidden="true"><b>9:41</b><span className="phone-status__island" /><span>▮▮▮  ᯤ <i /></span></div>
       <div className="reader__top">
         <button className="iconbtn iconbtn--plain" onClick={onHome} aria-label="返回首页"><Icon name="home" /></button>
         <div className="reader__episode">
@@ -252,6 +253,7 @@ export const ReaderScreen: React.FC<Props> = ({
         </div>
       </div>
 
+      <div className="reader__continue"><button onClick={advance}>{isRevealed ? '轻触继续' : '轻触打开'} <span>⌄</span></button></div>
       <div className="reader__foot">
         <button className="reader__foot-action" onClick={doPrev} disabled={globalIndex === 0} aria-label="上一段">
           <Icon name="prev" size={18} /><span>上一段</span>

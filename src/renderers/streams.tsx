@@ -61,11 +61,13 @@ export const ForumThreadRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }
     <article className="forum-thread">
       <header className="forum-thread__nav">
         <span className="forum-thread__back">‹</span>
-        <strong>匿名社区</strong>
+        <strong className="dc-brand">dcinside<span>디시인사이드</span></strong>
         <span>•••</span>
       </header>
+      <div className="dc-gallery">환승연애 갤러리 <small>ⓜ</small><span>☆　⌕</span></div>
+      <div className="dc-tabs"><b>전체글</b><span>개념글</span><span>공지</span><span>갤러리 정보</span></div>
       <section className="forum-thread__post">
-        <div className="forum-thread__author"><i /> 匿名网友</div>
+        <div className="forum-thread__author">ㅇㅇ (匿名网友)<span>갤로그　 ···</span></div>
         {title && <Lines text={forumTitle(title.text)} className="forum-thread__title" />}
         <div className="forum-thread__body">
           {body.map((entry) => {
@@ -84,25 +86,25 @@ export const ForumThreadRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream }
             return <Lines key={entry.sourceId} text={entry.text} className="forum-thread__paragraph" />;
           })}
         </div>
-        <footer><span>♡</span><span>↗</span><span>保存</span></footer>
+        <footer><span>추천 ♧</span><span>비추천 ♧</span><span>공유 ↗</span></footer>
       </section>
       <section className="forum-thread__comments">
-        <header><strong>{count?.text || '评论'}</strong><span>按顺序</span></header>
+        <header><strong>{count?.text || '评论'}</strong><span>등록순　최신순　답글순</span></header>
         {comments.map((comment, index) => {
           const contentItems = comment.items.filter((entry) => !/^\s*\d+\.\s*匿名网友/.test(entry.text));
           const nested = comment.block.subtype === 'nested_comment' || /^\s*(?:ㄴ|@)/.test(comment.text);
           return (
             <div className={`forum-comment ${nested ? 'forum-comment--nested' : ''} ${index === comments.length - 1 ? 'is-new' : ''}`} key={`${comment.sourceId}-${index}`}>
-              <div className="forum-comment__avatar"><i /></div>
+              <div className="forum-comment__avatar">{nested ? '↳' : 'ㅇㅇ'}</div>
               <div className="forum-comment__main">
-                <div className="forum-comment__name">{nested ? '回复' : (comment.speaker || '匿名网友')}</div>
+                <div className="forum-comment__name">{nested ? '回复' : (comment.speaker || 'ㅇㅇ')}</div>
                 {contentItems.map((entry) => (
                   entry.type === 'media'
                     ? <RouteMedia key={entry.sourceId} entry={entry} />
                     : <Lines key={entry.sourceId} text={entry.text.replace(/^\s*ㄴ\s*/, '')} className="forum-comment__text" />
                 ))}
                 {!contentItems.length && <Lines text={comment.text.replace(/^\s*ㄴ\s*/, '')} className="forum-comment__text" />}
-                <div className="forum-comment__actions"><span>♡</span><span>回复</span></div>
+                <div className="forum-comment__actions"><span>답글</span><span> ···</span></div>
               </div>
             </div>
           );
@@ -118,9 +120,9 @@ export const ChatStreamRenderer: React.FC<{ stream: ReadStep[]; dialogue?: boole
     <article className={dialogue ? 'dialogue-flow' : 'chat-flow'}>
       {!dialogue && (
         <header className="chat-flow__head">
-          <span className="chat-flow__status"><i /> LIVE</span>
-          <strong>节目聊天室</strong>
-          <small>只读记录</small>
+          <span className="chat-flow__status">‹</span>
+          <strong>换乘恋爱 <small>그룹채팅</small></strong>
+          <small>⌕　☰</small>
         </header>
       )}
       <div className="message-flow">
@@ -138,7 +140,7 @@ export const ChatStreamRenderer: React.FC<{ stream: ReadStep[]; dialogue?: boole
           );
         })}
       </div>
-      {!dialogue && <div className="chat-flow__readonly">MESSAGE HISTORY</div>}
+      {!dialogue && <div className="chat-flow__readonly"><span>＋</span><span>信息</span><span>☺　＃</span></div>}
     </article>
   );
 };
@@ -319,7 +321,8 @@ export const GameStreamRenderer: React.FC<{ stream: ReadStep[]; truth?: boolean 
 
 export const SmsStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean }> = ({ stream, revealed }) => (
   <article className="sms-flow">
-    <header><span>短信</span><strong>节目通知</strong><i>•••</i></header>
+    <header><span className="ios-back">‹</span><div className="ios-contact"><i>✉</i><strong>换乘恋爱 节目组 ›</strong></div><span /></header>
+    <div className="ios-date">iMessage<br />今天 21:41</div>
     <div className="sms-flow__thread" aria-live="polite">
       {stream.map((step, index) => {
         const current = index === stream.length - 1;
@@ -327,7 +330,7 @@ export const SmsStreamRenderer: React.FC<{ stream: ReadStep[]; revealed: boolean
         return <Lines key={`${step.sourceId}-${index}`} text={step.text} className={`sms-flow__bubble ${current ? 'is-new' : ''}`} />;
       })}
     </div>
-    <div className="sms-flow__home" />
+    <div className="ios-compose"><span>＋</span><div>iMessage <span>↑</span></div></div><div className="sms-flow__home" />
   </article>
 );
 
@@ -374,7 +377,8 @@ export const SocialStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream 
   const groups = socialPosts(stream.flatMap((step) => step.items));
   return (
     <article className="social-flow">
-      <header><strong>实时动态</strong><span>•••</span></header>
+      <header><span className="x-avatar">◉</span><strong className="x-brand"><svg width="23" height="25" viewBox="0 0 24 24" aria-label="X"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.25 6.94 6.05-6.94Zm-1.29 19.5h2.04L6.5 3.24H4.31L17.61 20.65Z"/></svg></strong><span>✧</span></header>
+      <div className="x-tabs"><b>为你推荐</b><span>正在关注</span></div>
       {groups.map((group, index) => {
         const account = group[0];
         const stats = group.find((entry) => /评论\d+.*转发\d+.*点赞\d+/.test(entry.text));
@@ -383,7 +387,7 @@ export const SocialStreamRenderer: React.FC<{ stream: ReadStep[] }> = ({ stream 
           <section key={account.sourceId} className={index === groups.length - 1 ? 'is-new' : ''}>
             <div className="social-flow__account"><i>{account.text.trim().slice(0, 1)}</i><Lines text={account.text} /></div>
             <div className="social-flow__body">{body.map((entry) => <Lines key={entry.sourceId} text={entry.text.replace(/^评分：/, '')} />)}</div>
-            {stats && <Lines text={stats.text.replace(/(评论\d+)\s*(转发\d+)\s*(点赞\d+)/, '$1   $2   $3')} className="social-flow__stats" />}
+            <div className="x-actions"><Icon name="chat" size={17}/><span>⇄</span><Icon name="heart" size={17}/><span>▥</span><span>↥</span></div>{stats && <Lines text={stats.text} className="social-flow__stats" />}
           </section>
         );
       })}

@@ -11,6 +11,7 @@ import {
   PlainReadingStreamRenderer,
   VoiceStreamRenderer,
   SocialStreamRenderer,
+  XRoomStreamRenderer,
 } from './streams';
 
 export interface RenderProps {
@@ -95,7 +96,7 @@ export const SceneCardRenderer: React.FC<RenderProps> = ({ step }) => {
   const night = /夜|凌晨|深夜|傍晚|月亮|晚/.test(step.text);
   return (
     <article className={'m-scene' + (night ? ' m-scene--night' : '')}>
-      <div className="m-scene__index">SCENE / 场记</div>
+      <div className="m-scene__index">EXchange <span>환승연애</span></div>
       <Icon name={night ? 'moon' : 'sun'} size={42} className="m-scene__doodle" />
       <Lines text={step.text} className="m-scene__big" />
       <div className="m-scene__route" aria-hidden="true"><i /><span /><i /></div>
@@ -119,7 +120,7 @@ export const FallbackRenderer: React.FC<RenderProps> = ({ step }) => (
 export const ProgramTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) => (
   <article className={'m-task' + (revealed ? ' is-open' : '')}>
     <div className="m-task__head">
-      <span className="m-task__mission">PROGRAM CARD</span>
+      <span className="m-task__mission">환승연애</span>
       <span className="m-task__serial">NO. {step.sourceId.replace(/\D/g, '').slice(-4)}</span>
     </div>
     <div className="m-task__route" aria-hidden="true"><i /><span /><i /></div>
@@ -128,7 +129,7 @@ export const ProgramTaskRenderer: React.FC<RenderProps> = ({ step, revealed }) =
         {step.items.map((entry) => <Lines key={entry.sourceId} text={entry.text} className="m-task__rule" />)}
       </div>
     ) : (
-      <div className="m-task__closed"><strong>节目卡</strong><small>PROGRAM CARD</small></div>
+      <div className="m-task__closed"><strong>节目卡</strong><small>환승연애</small></div>
     )}
   </article>
 );
@@ -137,7 +138,7 @@ export const ProgramRuleRenderer: React.FC<RenderProps> = ({ step, revealed }) =
   const rules = step.items.filter((entry) => entry.text.trim() !== '入住指南');
   return (
     <article className={'m-rule' + (revealed ? ' is-open' : '')}>
-      <header><span>HOUSE GUIDE</span><strong>入住指南</strong></header>
+      <header><span>입주 안내서</span><strong>入住指南</strong></header>
       {revealed ? (
         <div className="m-rule__pages">
           {rules.map((entry, index) => (
@@ -146,7 +147,7 @@ export const ProgramRuleRenderer: React.FC<RenderProps> = ({ step, revealed }) =
             </div>
           ))}
         </div>
-      ) : <div className="m-rule__locked"><span>HOUSE GUIDE</span></div>}
+      ) : <div className="m-rule__locked"><span>입주 안내서</span></div>}
     </article>
   );
 };
@@ -308,7 +309,7 @@ export const IdentityRevealRenderer: React.FC<RenderProps> = ({ step, revealed }
     {revealed ? (
       <div className="m-id__data"><span>ON AIR</span>{step.items.map((entry, index) => <Lines key={entry.sourceId} text={entry.text} className="m-id__line" />)}</div>
     ) : (
-      <div className="m-id__preview"><div className="m-id__redact"><i /><i /><i /></div><small>PROGRAM CARD</small></div>
+      <div className="m-id__preview"><div className="m-id__redact"><i /><i /><i /></div><small>환승연애</small></div>
     )}
   </article>
 );
@@ -449,7 +450,7 @@ const MAP: Record<string, React.FC<RenderProps>> = {
   observation_room: ObservationRoomRenderer,
   text_chat: TextChatRenderer,
   talking_room: TalkingRoomRenderer,
-  x_room: NarrativeRenderer,
+  x_room: XRoomRenderer,
   identity_reveal: IdentityRevealRenderer,
   date_task: DateTaskRenderer,
   finger_game: NarrativeRenderer,
@@ -471,7 +472,7 @@ export function ContentRenderer({ step, revealed, stream }: RenderProps) {
     case 'forum': return <ForumThreadRenderer stream={activeStream} />;
     case 'chat': return <ChatStreamRenderer stream={activeStream} />;
     case 'voice': return <VoiceStreamRenderer stream={activeStream} />;
-    case 'xroom': return <PlainReadingStreamRenderer stream={activeStream} kind="xroom" />;
+    case 'xroom': return <XRoomStreamRenderer stream={activeStream} revealed={revealed} />;
     case 'dialogue': return <ChatStreamRenderer stream={activeStream} dialogue />;
     case 'interview': return <InterviewStreamRenderer stream={activeStream} />;
     case 'observation': return <ObservationStreamRenderer stream={activeStream} />;

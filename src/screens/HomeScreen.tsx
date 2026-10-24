@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShowMark } from '../components/ShowMark';
 import { Icon } from '../components/Doodles';
 import { CHAPTER_ORDER, manifestData } from '../data/loader';
 import type { ProgressState } from '../hooks/useProgress';
@@ -26,19 +27,22 @@ export const HomeScreen: React.FC<Props> = ({
   return (
     <div className="home">
       <header className="home__topline">
-        <span className="home__edition">TRANSIT LOVE</span>
+        <span className="home__edition">TVING <small>ORIGINAL</small></span>
         <span className="home__onair">EP {String(episode).padStart(2, '0')} <i /></span>
       </header>
 
       <section className="home__hero" aria-labelledby="home-title">
         <div className="home__title-wrap">
-          <span className="home__eyebrow">TRANSFER LOVE</span>
+          <span className="home__eyebrow">끝난 사랑, 다시 시작할 수 있을까</span>
+          <ShowMark />
           <h1 className="home__title" id="home-title">换乘恋爱</h1>
-          <span className="home__title-en">환승연애 · INTERACTIVE READING</span>
+          <span className="home__title-en">EXchange · 承硕的故事</span>
         </div>
       </section>
 
       <section className="home__resume" aria-label="阅读进度">
+        <div className="home__notification"><span className="app-icon app-icon--message">✉</span><span>信息<small>现在</small></span></div>
+        <div className="home__notification-copy"><strong>换乘恋爱 节目组</strong><span>属于你们的故事，已经送达。</span></div>
         <div className="home__resume-head">
           <span>{hasProgress ? 'CONTINUE' : 'START'}</span>
           <strong>{pct}%</strong>
@@ -56,7 +60,7 @@ export const HomeScreen: React.FC<Props> = ({
           onClick={hasProgress ? onContinue : onRestart}
           aria-label={hasProgress ? '继续阅读' : '开始观看'}
         >
-          <span>{hasProgress ? '继续阅读' : '开始阅读'}</span>
+          <span>{hasProgress ? '解锁 · 继续观看' : '解锁 · 打开故事'}</span>
           <Icon name="next" size={20} />
         </button>
         <div className="home__action-row">
@@ -72,7 +76,7 @@ export const HomeScreen: React.FC<Props> = ({
       </div>
 
       <footer className="home__footer">
-        <span>{manifestData.totalChapters} PARTS</span><i />
+        <span>{manifestData.totalChapters} EPISODES</span><i />
         <span>{read.toLocaleString('zh-CN')} / {total.toLocaleString('zh-CN')}</span>
       </footer>
     </div>
