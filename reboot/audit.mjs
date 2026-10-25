@@ -40,6 +40,15 @@ const text4=fs.readFileSync('reboot/public/chapter-04-translation.txt','utf8');c
 assert.equal(fourth.scenes.length,28);assert.equal(new Set(fourChapters.map(s=>s.id)).size,113);
 for(const s of fourth.scenes){assert(s.chapter===4&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text4.includes(line),`missing chapter4 export ${s.id}: ${line}`)}
 assert.equal(fourth.scenes.filter(s=>s.app==='messages').length,1);assert.equal(fourth.scenes.find(s=>s.id==='c4-x-room-open-sms').app,'messages');assert(fourth.scenes.find(s=>s.id==='c4-next-preview').body.includes('你的 X 选择了你'));assert.equal(fourth.scenes.find(s=>s.id==='c4-next-preview').app,'tving');
-assert.equal(fourth.scenes.find(s=>s.id==='c4-seungyoun-diary').app,'tving');assert.equal(fourth.scenes.find(s=>s.id==='c4-wooseok-diary').app,'tving');assert(text4.includes(fourth.authorNote));
+assert.equal(fourth.scenes.find(s=>s.id==='c4-seungyoun-diary').app,'tving');assert.equal(fourth.scenes.find(s=>s.id==='c4-wooseok-diary').app,'tving');assert(!fourth.authorNote);assert(!text4.includes("作者附言"));
 const photos4=fourth.scenes.at(-1).pictures;assert.equal(photos4.length,5);assert.deepEqual(photos4.map(p=>p.original),['첫 생일 축하','보드타러 간 날','따따와 함께한 산책','승연이 콘서트 보러 간 날 올라온 사진','심통난 우석이']);for(const p of photos4){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
 console.log(JSON.stringify({chapter:4,scenes:28,exportedCharacters:text4.length,photos:photos4.length,totalScenes:fourChapters.length,result:'PASS'}));
+
+const fifth=JSON.parse(fs.readFileSync('reboot/chapter05.json','utf8')),text5=fs.readFileSync('reboot/public/chapter-05-translation.txt','utf8');
+const fiveChapters=[...fourChapters,...fifth.scenes];assert.equal(fifth.scenes.length,35);assert.equal(new Set(fiveChapters.map(s=>s.id)).size,148);
+for(const s of fifth.scenes){assert(s.chapter===5&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text5.includes(line),`missing chapter5 export ${s.id}: ${line}`)}
+assert.equal(fifth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(fifth.scenes.find(s=>s.id==='c5-first-x-text').app,'messages');assert.equal(fifth.scenes.find(s=>s.id==='c5-mutual-texts').app,'tving');assert.equal(fifth.scenes.find(s=>s.id==='c5-seungyoun-notice').app,'tving');assert.equal(fifth.scenes.find(s=>s.id==='c5-next-preview').app,'tving');assert.equal(fifth.scenes.filter(s=>s.app==='chat').length,2);
+assert(!fifth.authorNote);for(const phrase of ['为了剧情节奏','谢谢阅读','篇幅控制失败'])assert(!text5.includes(phrase));
+const photos5=fifth.scenes.at(-1).pictures;assert.equal(photos5.length,5);assert.deepEqual(photos5.map(p=>p.original),['해외 여행 갔을 때','친구들과 함께 한 술자리','촬영하다 승연에게 보내준 사진','일본 여행 갔을 때','우석의 집에서 잠든 승연']);for(const p of photos5){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
+assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第五章完整译文'));assert(!fs.readFileSync('reboot/phone.tsx','utf8').includes('authorNote'));
+console.log(JSON.stringify({chapter:5,scenes:35,exportedCharacters:text5.length,photos:photos5.length,totalScenes:fiveChapters.length,result:'PASS'}));
