@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "换乘恋爱第一至六章 · 从原文重译的捡手机互动故事",
+  "description": "换乘恋爱第一至七章 · 从原文重译的捡手机互动故事",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

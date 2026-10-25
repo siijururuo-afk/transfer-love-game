@@ -60,3 +60,11 @@ assert.equal(sixth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(s
 const photos6=sixth.scenes.at(-1).pictures;assert.deepEqual(photos6.map(p=>p.original),['따따와 놀 때','작업실 이사가던 날','제주도 갔을 때','승연이 제일 좋아하는 우석의 셀카','즉흥적으로 밤바다 보러 간 날']);assert.equal(photos6[0].width,706);assert.equal(photos6[0].height,707);for(const p of photos6){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
 assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第六章完整译文'));
 console.log(JSON.stringify({chapter:6,scenes:32,exportedCharacters:text6.length,photos:photos6.length,totalScenes:sixChapters.length,result:'PASS'}));
+
+const seventh=JSON.parse(fs.readFileSync('reboot/chapter07.json','utf8')),text7=fs.readFileSync('reboot/public/chapter-07-translation.txt','utf8');
+const sevenChapters=[...sixChapters,...seventh.scenes];assert.equal(seventh.scenes.length,33);assert.equal(new Set(sevenChapters.map(s=>s.id)).size,213);
+for(const s of seventh.scenes){assert(s.chapter===7&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text7.includes(line),`missing chapter7 export ${s.id}: ${line}`)}
+assert.equal(seventh.scenes.filter(s=>s.app==='messages').length,2);assert.equal(seventh.scenes.find(s=>s.id==='c7-seungyoun-text').app,'tving');assert.equal(seventh.scenes.find(s=>s.id==='c7-wooseok-text').app,'messages');assert.equal(seventh.scenes.find(s=>s.id==='c7-date-invitation').app,'files');assert.equal(seventh.scenes.find(s=>s.id==='c7-next-preview').app,'tving');assert(!seventh.authorNote);
+const photos7=seventh.scenes.at(-1).pictures;assert.deepEqual(photos7.map(p=>p.original),['해외 여행 중 길거리 음식먹기','똥개 조승연','승연이가 두 번째로 좋아하는 셀카','카페 데이트 때 승연이 찍어준 사진','우석이 술 마시고 뻗은 날']);for(const p of photos7){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
+assert.equal(seventh.referenceVideo.id,'9QjQlnoFq_8');assert(text7.includes(seventh.referenceVideo.url));assert(fs.readFileSync('reboot/youtube.tsx','utf8').includes(seventh.referenceVideo.id));assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第七章完整译文'));
+console.log(JSON.stringify({chapter:7,scenes:33,exportedCharacters:text7.length,photos:photos7.length,totalScenes:sevenChapters.length,result:'PASS'}));
