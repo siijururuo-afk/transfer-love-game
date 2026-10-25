@@ -1,16 +1,16 @@
 {
-  "name": "huancheng-love-transit",
+  "name": "transit-found-phone-reboot",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "description": "换乘恋爱 · 观众视角互动阅读 — 以上帝视角观看既定故事",
+  "description": "换乘恋爱第一章 · 从原文重译的捡手机互动故事",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/assemble-audio.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "validate": "node scripts/validate.js",
-    "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs"
+    "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs",
+    "check:chapter": "node reboot/audit.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
