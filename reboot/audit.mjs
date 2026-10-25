@@ -52,3 +52,11 @@ assert(!fifth.authorNote);for(const phrase of ['为了剧情节奏','谢谢阅�
 const photos5=fifth.scenes.at(-1).pictures;assert.equal(photos5.length,5);assert.deepEqual(photos5.map(p=>p.original),['해외 여행 갔을 때','친구들과 함께 한 술자리','촬영하다 승연에게 보내준 사진','일본 여행 갔을 때','우석의 집에서 잠든 승연']);for(const p of photos5){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
 assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第五章完整译文'));assert(!fs.readFileSync('reboot/phone.tsx','utf8').includes('authorNote'));
 console.log(JSON.stringify({chapter:5,scenes:35,exportedCharacters:text5.length,photos:photos5.length,totalScenes:fiveChapters.length,result:'PASS'}));
+
+const sixth=JSON.parse(fs.readFileSync('reboot/chapter06.json','utf8')),text6=fs.readFileSync('reboot/public/chapter-06-translation.txt','utf8');
+const sixChapters=[...fiveChapters,...sixth.scenes];assert.equal(sixth.scenes.length,32);assert.equal(new Set(sixChapters.map(s=>s.id)).size,180);
+for(const s of sixth.scenes){assert(s.chapter===6&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text6.includes(line),`missing chapter6 export ${s.id}: ${line}`)}
+assert.equal(sixth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(sixth.scenes.find(s=>s.id==='c6-seungyoun-unselected').app,'tving');assert.equal(sixth.scenes.find(s=>s.id==='c6-received-texts').app,'messages');assert.equal(sixth.scenes.find(s=>s.id==='c6-jeju-invitation').app,'files');assert.equal(sixth.scenes.find(s=>s.id==='c6-next-preview').app,'tving');assert(!sixth.authorNote);
+const photos6=sixth.scenes.at(-1).pictures;assert.deepEqual(photos6.map(p=>p.original),['따따와 놀 때','작업실 이사가던 날','제주도 갔을 때','승연이 제일 좋아하는 우석의 셀카','즉흥적으로 밤바다 보러 간 날']);assert.equal(photos6[0].width,706);assert.equal(photos6[0].height,707);for(const p of photos6){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
+assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第六章完整译文'));
+console.log(JSON.stringify({chapter:6,scenes:32,exportedCharacters:text6.length,photos:photos6.length,totalScenes:sixChapters.length,result:'PASS'}));
