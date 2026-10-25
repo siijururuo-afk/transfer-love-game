@@ -11,7 +11,8 @@
     "validate": "node scripts/validate.js",
     "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs",
     "check:chapter": "node reboot/audit.mjs",
-    "prebuild": "node reboot/assemble-audio.mjs"
+    "prebuild": "node reboot/assemble-audio.mjs",
+    "check:interactions": "node reboot/check-interactions.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
