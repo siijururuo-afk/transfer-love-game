@@ -68,3 +68,11 @@ assert.equal(seventh.scenes.filter(s=>s.app==='messages').length,2);assert.equal
 const photos7=seventh.scenes.at(-1).pictures;assert.deepEqual(photos7.map(p=>p.original),['해외 여행 중 길거리 음식먹기','똥개 조승연','승연이가 두 번째로 좋아하는 셀카','카페 데이트 때 승연이 찍어준 사진','우석이 술 마시고 뻗은 날']);for(const p of photos7){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
 assert.equal(seventh.referenceVideo.id,'9QjQlnoFq_8');assert(text7.includes(seventh.referenceVideo.url));assert(fs.readFileSync('reboot/youtube.tsx','utf8').includes(seventh.referenceVideo.id));assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第七章完整译文'));
 console.log(JSON.stringify({chapter:7,scenes:33,exportedCharacters:text7.length,photos:photos7.length,totalScenes:sevenChapters.length,result:'PASS'}));
+
+const eighth=JSON.parse(fs.readFileSync('reboot/chapter08.json','utf8')),text8=fs.readFileSync('reboot/public/chapter-08-translation.txt','utf8');
+const eightChapters=[...sevenChapters,...eighth.scenes];assert.equal(eighth.scenes.length,36);assert.equal(new Set(eightChapters.map(s=>s.id)).size,249);
+for(const s of eighth.scenes){assert(s.chapter===8&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text8.includes(line),`missing chapter8 export ${s.id}: ${line}`)}
+assert.equal(eighth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(eighth.scenes.find(s=>s.id==='c8-seungyoun-received').app,'tving');assert.equal(eighth.scenes.find(s=>s.id==='c8-wooseok-received').app,'messages');assert.equal(eighth.scenes.filter(s=>s.app==='files').length,2);assert.equal(eighth.scenes.find(s=>s.id==='c8-next-preview').app,'tving');assert(!eighth.authorNote);
+const photos8=eighth.scenes.at(-1).pictures;assert.deepEqual(photos8.map(p=>p.original),['빙어낚시','한강산책','두번째 생일축하','남친 따라 간 헬스장','우석이 생일상 차리기']);for(const p of photos8){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
+assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第八章完整译文'));
+console.log(JSON.stringify({chapter:8,scenes:36,exportedCharacters:text8.length,photos:photos8.length,totalScenes:eightChapters.length,result:'PASS'}));
