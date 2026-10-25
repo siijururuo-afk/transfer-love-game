@@ -349,22 +349,30 @@
         {
           "src": "./photos/university.webp",
           "caption": "同一所学校，同一个专业",
-          "original": "같은 학교 같은 과"
+          "original": "같은 학교 같은 과",
+          "width": 900,
+          "height": 675
         },
         {
           "src": "./photos/love-shot.jpg",
           "caption": "19年《Love Shot》联合舞台",
-          "original": "19년 러브샷 합동 무대"
+          "original": "19년 러브샷 합동 무대",
+          "width": 700,
+          "height": 528
         },
         {
           "src": "./photos/cafe.webp",
           "caption": "咖啡店约会",
-          "original": "카페 데이트"
+          "original": "카페 데이트",
+          "width": 1000,
+          "height": 979
         },
         {
           "src": "./photos/night-walk.webp",
           "caption": "夜间散步",
-          "original": "밤 산책"
+          "original": "밤 산책",
+          "width": 720,
+          "height": 960
         }
       ]
     }
