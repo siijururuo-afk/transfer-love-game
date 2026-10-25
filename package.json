@@ -3,14 +3,15 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "换乘恋爱第一章 · 从原文重译的捡手机互动故事",
+  "description": "换乘恋爱第一、二章 · 从原文重译的捡手机互动故事",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "validate": "node scripts/validate.js",
     "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs",
-    "check:chapter": "node reboot/audit.mjs"
+    "check:chapter": "node reboot/audit.mjs",
+    "prebuild": "node reboot/assemble-audio.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

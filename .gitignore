@@ -22,3 +22,7 @@ Thumbs.db
 # 本地环境变量
 .env
 .env.local
+
+/reboot/public/audio/
+/qa.html
+/reboot/qa.tsx
