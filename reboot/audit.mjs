@@ -76,3 +76,11 @@ assert.equal(eighth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(
 const photos8=eighth.scenes.at(-1).pictures;assert.deepEqual(photos8.map(p=>p.original),['빙어낚시','한강산책','두번째 생일축하','남친 따라 간 헬스장','우석이 생일상 차리기']);for(const p of photos8){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
 assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第八章完整译文'));
 console.log(JSON.stringify({chapter:8,scenes:36,exportedCharacters:text8.length,photos:photos8.length,totalScenes:eightChapters.length,result:'PASS'}));
+
+const ninth=JSON.parse(fs.readFileSync('reboot/chapter09.json','utf8')),text9=fs.readFileSync('reboot/public/chapter-09-translation.txt','utf8');
+const nineChapters=[...eightChapters,...ninth.scenes];assert.equal(ninth.scenes.length,26);assert.equal(new Set(nineChapters.map(s=>s.id)).size,275);
+for(const s of ninth.scenes){assert(s.chapter===9&&s.body.trim()&&s.title.trim());for(const line of s.body.split('\n').filter(x=>x.trim()))assert(text9.includes(line),`missing chapter9 export ${s.id}: ${line}`);if(s.app==='tving')assert.equal(s.title,ninth.title);}
+assert.equal(ninth.scenes.filter(s=>s.app==='messages').length,2);assert.equal(ninth.scenes.find(s=>s.id==='c9-secret-date-invitation').app,'messages');assert.equal(ninth.scenes.find(s=>s.id==='c9-secret-date-matched').app,'messages');assert(ninth.scenes.find(s=>s.id==='c9-parting').body.includes('曹承衍先生与男嘉宾3'));assert.equal(ninth.scenes.find(s=>s.id==='c9-next-preview').app,'tving');assert(!ninth.authorNote);assert(text9.includes(ninth.readingNote));
+const photos9=ninth.scenes.at(-1).pictures;assert.deepEqual(photos9.map(p=>p.original),['승연의 카톡 프사였던 것','늦은 밤 석촌호수 산책','우석이 집 가는 길','즉흥으로 떠난 겨울 바다','승연과의 영상통화 중']);for(const p of photos9){assert(p.width>0&&p.height>0);assert(fs.existsSync('reboot/public/'+p.src.replace('./','')))}
+assert(fs.readFileSync('reboot/phone.tsx','utf8').includes('下载第九章完整译文'));
+console.log(JSON.stringify({chapter:9,scenes:26,exportedCharacters:text9.length,photos:photos9.length,totalScenes:nineChapters.length,result:'PASS'}));
