@@ -5,14 +5,16 @@
   "type": "module",
   "description": "换乘恋爱本篇与完整外传 · 从原文重译的捡手机互动故事",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && node scripts/build-pwa.mjs",
     "preview": "vite preview",
     "validate": "node scripts/validate.js",
     "audit:presentation": "esbuild scripts/presentation_audit.ts --bundle --platform=node --format=cjs --outfile=scripts/.presentation-audit.cjs && node scripts/.presentation-audit.cjs",
     "check:chapter": "node reboot/audit.mjs",
-    "prebuild": "node reboot/assemble-audio.mjs",
-    "check:interactions": "node reboot/check-interactions.mjs"
+    "prebuild": "node reboot/assemble-audio.mjs && node scripts/assemble-media.mjs",
+    "check:interactions": "node reboot/check-interactions.mjs",
+    "check:redesign": "node scripts/check-redesign.mjs && node scripts/redesign-audit.mjs",
+    "check:pwa": "node scripts/check-pwa.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

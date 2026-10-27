@@ -1,0 +1,2 @@
+import React,{useState} from 'react';
+export function OptionalVoice({src,label}:{src?:string;label?:string}){const[error,setError]=useState(false);if(!src)return null;return <aside className="optional-voice"><small>{label||'语音'}</small><audio controls preload="none" src={src} onPlay={()=>window.dispatchEvent(new Event('transit-video-play'))} onError={()=>setError(true)}/>{error&&<p role="status">语音暂时无法加载，仍可继续阅读。</p>}</aside>}

@@ -26,3 +26,6 @@ Thumbs.db
 /reboot/public/audio/
 /qa.html
 /reboot/qa.tsx
+
+# Original video bytes are restored from lossless parts during builds.
+/reboot/public/instagram/*.mp4

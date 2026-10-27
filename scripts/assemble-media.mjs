@@ -1,0 +1,2 @@
+import fs from'node:fs';import path from'node:path';import{createHash}from'node:crypto';
+for(const entry of JSON.parse(fs.readFileSync('media-parts/manifest.json'))){const data=Buffer.concat(entry.parts.map(p=>fs.readFileSync(p)));if(createHash('sha256').update(data).digest('hex')!==entry.sha256)throw Error('Original video checksum mismatch: '+entry.target);fs.mkdirSync(path.dirname(entry.target),{recursive:true});fs.writeFileSync(entry.target,data)}console.log('Restored four complete web videos with SHA-256 checks.');

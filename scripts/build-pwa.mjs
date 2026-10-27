@@ -1,0 +1,10 @@
+import{readFileSync,writeFileSync,readdirSync}from'node:fs';
+import{createHash}from'node:crypto';
+const files=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',...readdirSync('dist/assets').map(n=>'./assets/'+n)];
+const version=createHash('sha256').update(files.map(p=>p+'\n'+(p==='./'?'':readFileSync('dist/'+p.slice(2)))).join('\n')).digest('hex').slice(0,12);
+writeFileSync('dist/version.json',JSON.stringify({version}));
+writeFileSync('dist/sw.js',`const CACHE='transit-phone-${version}';const SHELL=${JSON.stringify(files)};
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('transit-phone-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{const r=e.request,u=new URL(r.url);if(r.method!=='GET'||u.origin!==self.location.origin||r.headers.has('range')||/\\.(mp4|mp3)$/.test(u.pathname)||u.pathname.endsWith('/version.json'))return;e.respondWith(fetch(r).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy)).catch(()=>{})}return res}).catch(async()=>{const cached=await caches.match(r);if(cached)return cached;if(r.mode==='navigate')return caches.match(new URL('./index.html',self.location.href));return Response.error()}))});`);
+console.log('PWA shell '+version+'; images cached only after request; no video/audio bulk cache.');
