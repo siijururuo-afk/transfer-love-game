@@ -1,0 +1,165 @@
+{
+  "engine": "Chromium 153, mobile emulation; not physical iOS Safari",
+  "results": [
+    {
+      "label": "01-cover",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [
+        {
+          "tag": "g",
+          "cls": {},
+          "text": "",
+          "right": 410
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "right": 410
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "right": 400
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "right": 400
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "right": 407
+        }
+      ],
+      "broken": []
+    },
+    {
+      "label": "02-letter",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "label": "03-talking-room",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "label": "04-x-room",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "label": "05-interview",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "label": "06-task",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [
+        {
+          "tag": "g",
+          "cls": {},
+          "text": "",
+          "right": 392.35896492004395
+        },
+        {
+          "tag": "path",
+          "cls": {},
+          "text": "",
+          "right": 392.35897064208984
+        }
+      ],
+      "broken": []
+    },
+    {
+      "label": "07-result",
+      "view": 390,
+      "doc": 390,
+      "body": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "width": 320,
+      "programmeSurfaces": 7,
+      "result": "pass"
+    },
+    {
+      "width": 360,
+      "programmeSurfaces": 7,
+      "result": "pass"
+    },
+    {
+      "width": 375,
+      "programmeSurfaces": 7,
+      "result": "pass"
+    },
+    {
+      "width": 430,
+      "programmeSurfaces": 7,
+      "result": "pass"
+    },
+    {
+      "instagramLikeSaveZoom": true,
+      "manualPagingRemoved": true
+    },
+    {
+      "storyReadWithoutWait": true
+    },
+    {
+      "futureRecordsHiddenAtStart": true,
+      "zeroInventedNotificationsAtStart": true
+    },
+    {
+      "notifications": 23,
+      "smsScenes": 17,
+      "historyOnlySourceBacked": true
+    }
+  ],
+  "recordsRendered": 356,
+  "failures": [],
+  "errors": []
+}

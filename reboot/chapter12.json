@@ -14,7 +14,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "129",
-      "originalTitle": "[후하후하 떨린다]"
+      "originalTitle": "[후하후하 떨린다]",
+      "presentation": "episode"
     },
     {
       "id": "e2-preparing",
@@ -22,17 +23,19 @@
       "title": "换乘恋爱（外传·下）",
       "body": "宇硕哼着歌，给自己化妆，身后传来曜汉的声音。\n\n“哥，真的又让我拍？这就是举个手机而已？是不是太使唤人了？”\n\n“所以，我们不是请你吃了贵贵的牛肉吗。你的粉丝，也会进来很多吧？”\n\n“想反驳，却没话说。那也帮我化点妆吧。”\n\n“坐这里。喂，承衍，还没好吗？”\n\n小心翼翼地给 Ddadda 穿衣服的承衍，朝宇硕那边喊。\n\n“差不多了。问题清单，也全准备好了吧？”\n\n“嗯，各自要答的问题，都标好了，中间也夹了我的。不过，直播的乐趣，就是读即时刷出来的问题，然后回答，知道吧？”\n\n“曜汉，好歹我们也是艺人，当然知道。”\n\n承衍常用 Instagram 交流，还算熟悉；宇硕却到现在，都不太习惯 Instagram 和直播，可依然理直气壮地说着，认真布置起家具。既是第一次直播，也第一次公开家里，要顾的事很多。又不是正式节目，距离开始也还早，可现在就紧张了，就算出道十年的宇硕，也没办法。反而是曜汉，躺在地板上，拆零食，轻轻松松地打发时间。",
       "kind": "record",
-      "chapter": 12
+      "chapter": 12,
+      "presentation": "episode"
     },
     {
       "id": "e2-five-minutes-post",
       "app": "cafe",
       "title": "还剩五分钟",
-      "body": "直播开始前五分钟。\n看着 YouTube 倒计时一直减少，为什么像自家孩子要出道一样，紧张，哈哈哈哈。\n\n↳ 呼呼呼呼呼呼呼呼。\n↳ 人在外面，也在等这个……哈哈哈哈。\n　↳ 真的，比我们家孩子回归那天，还紧张。\n↳ 哇，等着的人，已经三万？绝了。\n　↳ 开始就会超五万吧，靠。\n↳ 大家，多问点有价值的问题。\n　↳ 真的，答应我，多问为了公共利益的问题。\n↳ 听着《会成为伤害吗》等，好紧张，像来了演唱会。\n↳ 我来派对房，准备拿大屏幕看。\n　↳ 哇，羡慕死了，我也想跟朋友一起看ㅠㅠㅠㅠ。\n　↳ 我们都是朋友朋友。\n↳ 大家，开始了，操，今天好好看。\n　↳ 不是，宇硕哈哈哈，在自己家，也戴贝雷帽？\n　↳ 啊，又只有宇硕打扮得那么用心，哈哈哈哈。\n　↳ 太可爱，想咬一口。",
+      "body": "直播开始前五分钟。\n看着 YouTube 倒计时一直减少，为什么像自家孩子要出道一样，紧张，哈哈哈哈。\n\n↳ 呼呼呼呼呼呼呼呼。\n↳ 人在外面，也在等这个……哈哈哈哈。\n　↳ 真的，比我们家孩子回归那天，还紧张。\n↳ 哇，等着的人，已经三万？绝了。\n　↳ 开始就会超五万吧，靠。\n↳ 大家，多问点有价值的问题。\n　↳ 真的，答应我，多问为了公共利益的问题。\n↳ 听着《Sun or Suck》等，好紧张，像来了演唱会。\n↳ 我来派对房，准备拿大屏幕看。\n　↳ 哇，羡慕死了，我也想跟朋友一起看ㅠㅠㅠㅠ。\n　↳ 我们都是朋友朋友。\n↳ 大家，开始了，操，今天好好看。\n　↳ 不是，宇硕哈哈哈，在自己家，也戴贝雷帽？\n　↳ 啊，又只有宇硕打扮得那么用心，哈哈哈哈。\n　↳ 太可爱，想咬一口。",
       "kind": "post",
       "chapter": 12,
       "count": "241",
-      "originalTitle": "[5분 남았다]"
+      "originalTitle": "[5분 남았다]",
+      "presentation": "episode"
     },
     {
       "id": "e2-opening",
@@ -42,7 +45,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-live-comments",
@@ -52,7 +56,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-schedules-post",
@@ -61,7 +66,8 @@
       "body": "承硕正在直播，确定能说的，是《洪锡天的宝石盒》，还说有很多，让大家期待。\n也透露了宇硕的电视剧、承衍的专辑和演唱会。\n\n↳ 入伍前，拼命工作再去啊。\n　↳ 也提入伍了？\n　↳ 嗯，一起入伍，还有一年，应该会好好用。\n↳ 羡慕洪锡天，连宝宝耶稣也见到了。\n↳ 宝宝耶稣，要不是 gay，我就去追。\n　↳ 就算是直的，跟你也不会……\n　↳ 闭嘴一下。\n↳ 可评论真的好多，打赏也超多。\n　↳ 他们慌了，一直说别打赏，后来直接关了，哈哈哈哈。\n　↳ 可爱的小子们。\n↳ 这场直播，我们等了多久，大家都在暴走哈哈哈。\n↳ 挂件那事，节目播了之后，他们居然又吵，真是不出所料。\n　↳ 又吵？厉害了，首尔、济州岛，已经为那个闹过。\n　↳ 不是说，现在配情侣挂件了，哈哈哈哈。\n　↳ 帽子看着真奇怪，像拖鞋第二版。\n\n（照片）\n\n旁边放着的，不是两顶帽子？怪死了。\n\n　↳ 那个奉太奎先生戴过。\n　↳ 啊，服了。",
       "kind": "post",
       "chapter": 12,
-      "originalTitle": "[같스케 많은 것 같은데?]"
+      "originalTitle": "[같스케 많은 것 같은데?]",
+      "presentation": "episode"
     },
     {
       "id": "e2-marriage-post",
@@ -70,7 +76,8 @@
       "body": "承衍说，当然……会结婚。\n说在泰国、希腊之间纠结……还向宝宝耶稣……咨询了婚戒。\n\n익인1\n靠靠靠靠靠，甜蜜的承硕啊。\n\n익인2\n为爱疯曹、一起疯金，果然没变。\n\n익인3\n偏偏宇硕早就全知道了，哈哈哈哈。\n\n익인4\n从人道上来说，不管泰国还是希腊，都得在高尺巨蛋，再办一次。\n\n익인5\n2222，请直播。",
       "kind": "post",
       "chapter": 12,
-      "originalTitle": "[결혼...이라고 말했다]"
+      "originalTitle": "[결혼...이라고 말했다]",
+      "presentation": "episode"
     },
     {
       "id": "e2-porridge-and-date",
@@ -80,7 +87,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-hollywood-post",
@@ -90,7 +98,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "138",
-      "originalTitle": "[할리우드 같은 게 아니라 너넨 정말 할리우드가 맞다]"
+      "originalTitle": "[할리우드 같은 게 아니라 너넨 정말 할리우드가 맞다]",
+      "presentation": "episode"
     },
     {
       "id": "e2-truth-game",
@@ -100,7 +109,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-truth-answer-post",
@@ -110,7 +120,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "358",
-      "originalTitle": "[와 진겜 패스한 질문 답 김요한이었네ㅋㅋㅋㅋㅋㅋ]"
+      "originalTitle": "[와 진겜 패스한 질문 답 김요한이었네ㅋㅋㅋㅋㅋㅋ]",
+      "presentation": "episode"
     },
     {
       "id": "e2-outfits-and-comments",
@@ -120,7 +131,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-last-questions",
@@ -130,7 +142,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-winning-outfit-post",
@@ -140,7 +153,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "82",
-      "originalTitle": "[필승 조합 역시 노린 거였어]"
+      "originalTitle": "[필승 조합 역시 노린 거였어]",
+      "presentation": "episode"
     },
     {
       "id": "e2-different-choice-post",
@@ -150,7 +164,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "130",
-      "originalTitle": "[와 엇갈렸음 아예 안봤을거래]"
+      "originalTitle": "[와 엇갈렸음 아예 안봤을거래]",
+      "presentation": "episode"
     },
     {
       "id": "e2-goodbye",
@@ -160,7 +175,8 @@
       "kind": "live-qna",
       "chapter": 12,
       "channelName": "일단승석",
-      "videoKey": "couple-live-02"
+      "videoKey": "couple-live-02",
+      "presentation": "episode"
     },
     {
       "id": "e2-happy-two-hours-post",
@@ -170,7 +186,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "482",
-      "originalTitle": "[행복한 2시간이었다...]"
+      "originalTitle": "[행복한 2시간이었다...]",
+      "presentation": "episode"
     },
     {
       "id": "e2-selfie-post",
@@ -180,7 +197,8 @@
       "kind": "post",
       "chapter": 12,
       "count": "587",
-      "originalTitle": "[ㅁㅊ커플 셀카 올라왔다!!!!!!!!.jpg]"
+      "originalTitle": "[ㅁㅊ커플 셀카 올라왔다!!!!!!!!.jpg]",
+      "presentation": "episode"
     },
     {
       "id": "e2-last-words-post",
@@ -189,7 +207,8 @@
       "body": "感觉，真的看得出，发自内心感谢，所以我也感动了……\n\n1. 无名的德库\n两个人，好像又因为彼此就在旁边，而感慨了一次，哈哈哈哈。\n\n2. 无名的德库\n是啊，你们确实会那样。\n\n3. 无名的德库\n我真的以为，是颁奖感言。\n\n4. 无名的德库\n莫名，我也鼻子一酸。\n\n5. 无名的德库\n愿承硕永远。\n\n6. 无名的德库\n大家，哪儿也不去，永远磕“承硕”。要看着他们，走到结婚。\n\n7. 无名的德库\n@6楼 当然，谁都别想走。\n\n8. 无名的德库\n这段时间辛苦了，以后也只磕承硕吧，大家^^^。",
       "kind": "post",
       "chapter": 12,
-      "originalTitle": "무명의 더쿠ㅣ마지막에 한 말 뭔가 감동이지 않아ㅠㅠ?"
+      "originalTitle": "무명의 더쿠ㅣ마지막에 한 말 뭔가 감동이지 않아ㅠㅠ?",
+      "presentation": "episode"
     }
   ],
   "afterword": "终于，连外传在内，承硕换乘恋爱的所有旅程，都结束了！\n非常非常感谢，一直实时追到外传第二篇的大家。你们的关注和评论，让我真的很幸福！\n连载换恋的日子，很开心。感谢大家，阅读这篇还有很多不足的文！没有 BGM 的第一到第六篇，我也补上了 BGM，偶尔想起来，也请从头重刷，哈哈🧡💙"

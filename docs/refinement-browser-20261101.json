@@ -1,0 +1,11 @@
+{
+  "engine": "Chromium 153 mobile emulation; no physical iOS Safari",
+  "sourceModeDefaultOff": true,
+  "sourceModePersistent": true,
+  "chapter4PairsVisible": 7,
+  "missingImageTextNotFabricated": true,
+  "lockCueDistinctFromSms": true,
+  "policyFailureRetry": true,
+  "videoErrorDedupAndRetry": true,
+  "pageErrors": []
+}

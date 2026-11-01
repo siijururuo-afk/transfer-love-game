@@ -1,0 +1,304 @@
+{
+  "records": 356,
+  "orderingPreserved": true,
+  "textRecordsReviewed": 355,
+  "unverifiedTextRecords": [
+    "e1-question-story"
+  ],
+  "paragraphPairs": 1958,
+  "forumRecordsChecked": 111,
+  "unknownForumSources": 90,
+  "mediaUnchanged": [
+    {
+      "path": "reboot/public/covers/drowning.jpg",
+      "gitBlob": "0034db06c28e399f7e3916377e02f75f6b01b702"
+    },
+    {
+      "path": "reboot/public/covers/i-hate-you.jpg",
+      "gitBlob": "be208c63459bb7d49dae02375157b4fb3dac03b5"
+    },
+    {
+      "path": "reboot/public/covers/love-shot.jpg",
+      "gitBlob": "ef4464a6115416c92dc66b559f4ee913c3779956"
+    },
+    {
+      "path": "reboot/public/covers/meaningless.jpg",
+      "gitBlob": "804bc00d3c1522dfc09f394c14cc4baa8b6f9fc3"
+    },
+    {
+      "path": "reboot/public/covers/sun-or-suck.jpg",
+      "gitBlob": "d57c78d6c8986522d19f73ca4200143083e5cd1b"
+    },
+    {
+      "path": "reboot/public/favicon.svg",
+      "gitBlob": "7691a46f78ff5a19d3e609a3c3dedbcec96f2a8e"
+    },
+    {
+      "path": "reboot/public/icon-192.png",
+      "gitBlob": "51e262631d7d64d248a7021b9cc34b62cbfe0b30"
+    },
+    {
+      "path": "reboot/public/icon-512.png",
+      "gitBlob": "c4811b910da4f4ffb5416c12663bb0c0823c224e"
+    },
+    {
+      "path": "reboot/public/instagram/avatar.jpeg",
+      "gitBlob": "53452f87280b47b85e3278ef0f141e07fe4181e3"
+    },
+    {
+      "path": "reboot/public/instagram/beauty-1.jpeg",
+      "gitBlob": "55610e88fc950838d79e09f0513793a6d6411507"
+    },
+    {
+      "path": "reboot/public/instagram/beauty-2.jpeg",
+      "gitBlob": "d816e30c4c590b8d146c44099bfe5e019a4c456c"
+    },
+    {
+      "path": "reboot/public/instagram/blood-1.jpeg",
+      "gitBlob": "84b945100d2d934d041b189734972c0c90d9f0c0"
+    },
+    {
+      "path": "reboot/public/instagram/blood-2.jpeg",
+      "gitBlob": "de63ea3fa4cc573dd6c96eeab114a77eafc2e70b"
+    },
+    {
+      "path": "reboot/public/instagram/blood-3.jpeg",
+      "gitBlob": "aded86244a28a91d28e31fa15868426d469549a2"
+    },
+    {
+      "path": "reboot/public/instagram/blood-4.jpeg",
+      "gitBlob": "31c3af9de49e63361d40c71136208492048bd9ce"
+    },
+    {
+      "path": "reboot/public/instagram/blood-5.jpeg",
+      "gitBlob": "479e78e757322cb6af224f3a794de46a607874da"
+    },
+    {
+      "path": "reboot/public/instagram/blood-6.jpeg",
+      "gitBlob": "9b7ea61eda1636d88e1d621951161e42f57f0de6"
+    },
+    {
+      "path": "reboot/public/instagram/cardigan-1.jpeg",
+      "gitBlob": "9b769e9a68ee41fdd10b2599c45b974259ccfb44"
+    },
+    {
+      "path": "reboot/public/instagram/cardigan-2.jpeg",
+      "gitBlob": "1ccd6b29f6026e6c778b009f57e0ef300f22efaf"
+    },
+    {
+      "path": "reboot/public/instagram/denim-1.jpeg",
+      "gitBlob": "b7369cf3af9bfbf9840ba02f200777ae8c6c4be3"
+    },
+    {
+      "path": "reboot/public/instagram/denim-2.jpeg",
+      "gitBlob": "034a2b0fedb0555a7304d19292d3f2584e2209ed"
+    },
+    {
+      "path": "reboot/public/instagram/highlight.png",
+      "gitBlob": "e5f6d5c59a1ab88fee31fc3eed04567ca05bfddd"
+    },
+    {
+      "path": "reboot/public/instagram/mirror-1.jpeg",
+      "gitBlob": "16973f9120cdb8a01bbc51a6b6657975af59de0e"
+    },
+    {
+      "path": "reboot/public/instagram/night-1.jpeg",
+      "gitBlob": "0388770a8936d5489d536fa2c28c449c3f21d929"
+    },
+    {
+      "path": "reboot/public/manifest.webmanifest",
+      "gitBlob": "5cb59e714bf27d8b223cb72fb392aa4360a907b5"
+    },
+    {
+      "path": "reboot/public/photos/after-drinks.webp",
+      "gitBlob": "9825ab10a90b2d8d314c77a0d43826b3ef5656b4"
+    },
+    {
+      "path": "reboot/public/photos/and-now-couple-selfie.webp",
+      "gitBlob": "b735a90dfed00de62074c24f50cc1102000fd617"
+    },
+    {
+      "path": "reboot/public/photos/and-now-dinner-date.webp",
+      "gitBlob": "2ded18ce7ca48e2c11b2ab46f740d00d5884cb83"
+    },
+    {
+      "path": "reboot/public/photos/and-now-photo-booth.webp",
+      "gitBlob": "b959c83427de5ed8dac9f87c25f243c61eacb2c1"
+    },
+    {
+      "path": "reboot/public/photos/and-now-red-airpods.webp",
+      "gitBlob": "f076f19a4cf7f718edc351199e7af31f8ea2a9cf"
+    },
+    {
+      "path": "reboot/public/photos/and-now-studio.webp",
+      "gitBlob": "d17b97a2e4cebf6e138f7eedced216c112ceb250"
+    },
+    {
+      "path": "reboot/public/photos/and-now-taking-photo.webp",
+      "gitBlob": "438c7922c9d95ba507627912b507829c148d1be5"
+    },
+    {
+      "path": "reboot/public/photos/and-now-together.webp",
+      "gitBlob": "b61dfa02452cf17558fa27477cb0a89a951bf654"
+    },
+    {
+      "path": "reboot/public/photos/asleep-at-home.webp",
+      "gitBlob": "952f91dd1ecfc55b645e0f117c428b5ae3a9a8b5"
+    },
+    {
+      "path": "reboot/public/photos/birthday-meal.webp",
+      "gitBlob": "e0e3fddc5aad60c89ca78214125369b8a2d46677"
+    },
+    {
+      "path": "reboot/public/photos/boyfriend-gym.webp",
+      "gitBlob": "686c9b4fb068d7f91d07a1f4bbbe28345eaceb6c"
+    },
+    {
+      "path": "reboot/public/photos/cafe-date-photo.webp",
+      "gitBlob": "e67188a0c9cbbd5cc444b84b7a3692c23058c6ce"
+    },
+    {
+      "path": "reboot/public/photos/cafe.webp",
+      "gitBlob": "295c456b1326cec0dcc1e47a1bae988cee65364f"
+    },
+    {
+      "path": "reboot/public/photos/concert-day.webp",
+      "gitBlob": "947d2b28cc9c2611c3cdee06919a583abfad50a3"
+    },
+    {
+      "path": "reboot/public/photos/couple-qna-story.webp",
+      "gitBlob": "45c8744edbbd4215d26c5c8bc38a3f3b795c3aa9"
+    },
+    {
+      "path": "reboot/public/photos/ddadda-walk.webp",
+      "gitBlob": "fe1b23f2aca7109670c64a697afe7f1a8dba15b9"
+    },
+    {
+      "path": "reboot/public/photos/drinks-with-friends.webp",
+      "gitBlob": "9f85ff532a4fd5b9f0c55681b69f6b55ab4e2db4"
+    },
+    {
+      "path": "reboot/public/photos/favorite-selfie.webp",
+      "gitBlob": "a8ba5bc0ef43f3215c9366e648bce9c212e8831d"
+    },
+    {
+      "path": "reboot/public/photos/filming-photo.webp",
+      "gitBlob": "33eb300a57664a508005c2648a2cab1b8ee28b25"
+    },
+    {
+      "path": "reboot/public/photos/first-birthday.webp",
+      "gitBlob": "f595182fef0c4fb3b81886fa56c35f4cc659eac8"
+    },
+    {
+      "path": "reboot/public/photos/france.webp",
+      "gitBlob": "963707f919f5ac528c61564c86beeacf4c4c21dd"
+    },
+    {
+      "path": "reboot/public/photos/han-river-memory.webp",
+      "gitBlob": "849de38a5c39af30d0ddfa979e801027a11c0446"
+    },
+    {
+      "path": "reboot/public/photos/han-river.webp",
+      "gitBlob": "6ec0d3e590c3459ff44a6d9410d3816cbdd9f59a"
+    },
+    {
+      "path": "reboot/public/photos/japan-trip.webp",
+      "gitBlob": "f781a18208eae3f32c1fa1e2d7c74c8af5f97e11"
+    },
+    {
+      "path": "reboot/public/photos/jeju-memory.webp",
+      "gitBlob": "086e80a714415e615fd2e220037832fa6a14f1a4"
+    },
+    {
+      "path": "reboot/public/photos/kakao-profile-memory.webp",
+      "gitBlob": "818609584a9244331d6ade7640d4f182443c97be"
+    },
+    {
+      "path": "reboot/public/photos/love-shot.jpg",
+      "gitBlob": "740011195b85ec7bb41e548110789c0a7638b990"
+    },
+    {
+      "path": "reboot/public/photos/night-sea-trip.webp",
+      "gitBlob": "932025ea3634f5354e28c7852ebd5da2143b6a8a"
+    },
+    {
+      "path": "reboot/public/photos/night-walk.webp",
+      "gitBlob": "2da7bcde6ee1531af938d53f0ca2289dfc8083f8"
+    },
+    {
+      "path": "reboot/public/photos/on-the-way-to-wooseok.webp",
+      "gitBlob": "5dc95b1492bed50b37134eec1fa55a9da9b20dcc"
+    },
+    {
+      "path": "reboot/public/photos/overseas-trip.webp",
+      "gitBlob": "3a959b3a5bc0aa8f048dd35f9818f1b5acbd3cf5"
+    },
+    {
+      "path": "reboot/public/photos/playing-with-ddadda.webp",
+      "gitBlob": "69a7fa5d6366285b225222076f924d8127787c75"
+    },
+    {
+      "path": "reboot/public/photos/rehearsal.webp",
+      "gitBlob": "0ad06883fc99fbd5031b4a531a0e7eaaab0047ea"
+    },
+    {
+      "path": "reboot/public/photos/samijo-reaction.webp",
+      "gitBlob": "0811c383066d9e98fcc654bedd37c6baa7ab5a0a"
+    },
+    {
+      "path": "reboot/public/photos/script-practice.webp",
+      "gitBlob": "352b7e2d17e3b87858a096f864b8300b46aafc6b"
+    },
+    {
+      "path": "reboot/public/photos/second-birthday.webp",
+      "gitBlob": "95b32d6d224ea1cb7cf932b5a1c94c0a74eabb1f"
+    },
+    {
+      "path": "reboot/public/photos/second-favorite-selfie.webp",
+      "gitBlob": "f6aaa30e76b3e4f3efb9cc98062f82ee4e8c3216"
+    },
+    {
+      "path": "reboot/public/photos/seokchon-lake-night.webp",
+      "gitBlob": "6a42deb31ef12032643557c8fad24cc9724c528c"
+    },
+    {
+      "path": "reboot/public/photos/seungyoun-snapshot.webp",
+      "gitBlob": "2e5956405363bf50e4d6c864ff59bbbf50efc253"
+    },
+    {
+      "path": "reboot/public/photos/smelt-fishing.webp",
+      "gitBlob": "9e7e6d6fc27dcc283e8f96986cc0b303338cfd31"
+    },
+    {
+      "path": "reboot/public/photos/snowboard-day.webp",
+      "gitBlob": "ed39b9098ce2d00bf8d5d66df9c380d24be89ed9"
+    },
+    {
+      "path": "reboot/public/photos/street-food-trip.webp",
+      "gitBlob": "c607e375f8d0e90e674ab6453c53b92981988eb4"
+    },
+    {
+      "path": "reboot/public/photos/studio-moving-day.webp",
+      "gitBlob": "75a341a0b9f050fc9aa26febd74efc952a0b09fb"
+    },
+    {
+      "path": "reboot/public/photos/sulky-wooseok.webp",
+      "gitBlob": "53b3a9dd95cb2a162cf376862ade8532c5bc38b0"
+    },
+    {
+      "path": "reboot/public/photos/university.webp",
+      "gitBlob": "13e3b62921b39709f0f58663b3bd51ddc750bed5"
+    },
+    {
+      "path": "reboot/public/photos/video-call-with-seungyoun.jpeg",
+      "gitBlob": "a72858a5167419b21a9b1a8ada5aa1c3cb9ff921"
+    },
+    {
+      "path": "reboot/public/photos/winter-sea-trip.webp",
+      "gitBlob": "838ecb7f0e0b7218da1653e21ecb148a1c419d7b"
+    }
+  ],
+  "originalMediaIdentitiesVerified": false,
+  "fontsAndSizesPreserved": true,
+  "physicalIphoneSafariTested": false
+}

@@ -43,7 +43,7 @@ jobs:
         run: npm run build
 
       - name: 验证剧情、存档、交互与 PWA
-        run: npm run check:chapter && npm run check:interactions && npm run check:redesign && npm run check:pwa
+        run: npm run check:chapter && npm run check:interactions && npm run check:redesign && npm run check:refinement && npm run check:pwa
 
       - name: 上传构建产物
         uses: actions/upload-pages-artifact@v3

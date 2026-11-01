@@ -1,8 +1,12 @@
 import{readFileSync,writeFileSync,readdirSync}from'node:fs';
 import{createHash}from'node:crypto';
+// Keep standalone reruns deterministic and avoid preserving an older version tag.
+writeFileSync('dist/index.html',readFileSync('dist/index.html','utf8').replace(/<meta name="transit-build" content="[^"]*">/g,''));
 const files=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',...readdirSync('dist/assets').map(n=>'./assets/'+n)];
 const version=createHash('sha256').update(files.map(p=>p+'\n'+(p==='./'?'':readFileSync('dist/'+p.slice(2)))).join('\n')).digest('hex').slice(0,12);
 writeFileSync('dist/version.json',JSON.stringify({version}));
+const entry=readFileSync('dist/index.html','utf8');
+writeFileSync('dist/index.html',entry.replace('</head>',`<meta name="transit-build" content="${version}"></head>`));
 writeFileSync('dist/sw.js',`const CACHE='transit-phone-${version}';const SHELL=${JSON.stringify(files)};
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('transit-phone-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

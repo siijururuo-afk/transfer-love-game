@@ -14,7 +14,8 @@
     "prebuild": "node reboot/assemble-audio.mjs && node scripts/assemble-media.mjs",
     "check:interactions": "node reboot/check-interactions.mjs",
     "check:redesign": "node scripts/check-redesign.mjs && node scripts/redesign-audit.mjs",
-    "check:pwa": "node scripts/check-pwa.mjs"
+    "check:pwa": "node scripts/check-pwa.mjs",
+    "check:refinement": "node scripts/check-refinement.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
