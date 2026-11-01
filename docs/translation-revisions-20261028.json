@@ -300,6 +300,61 @@
       "reason": "거울 치료指对照自身问题反省，不是治疗。",
       "sourceLine": 159,
       "sourceFile": "original_html/12_환승연애(외전下)_ 샛별.html"
+    },
+    {
+      "chapter": 1,
+      "recordId": "woodz-arrival",
+      "field": "body",
+      "korean": "ㄴ환연에 ㄹㅈㄷ뼈를 묻으시네",
+      "before": "这是要在《换乘恋爱》里埋下传奇之骨了。",
+      "after": "这是要在《换乘恋爱》里留下传奇、扎根到底啊。",
+      "reason": "뼈를 묻다是扎根、奉献到底的惯用表达；不将뼈机械译作“传奇之骨”。",
+      "sourceLine": 65,
+      "sourceFile": "01_换乘恋爱 (1)_ 启明星.html"
+    },
+    {
+      "chapter": 1,
+      "recordId": "roommates",
+      "field": "body",
+      "korean": "\"어? 룸메가 정해져 있네요? 지난 시즌까진 그런 거 없었는데.\"",
+      "before": "上一季还没这个规定呢。",
+      "after": "直到上一季都还没有这种规定呢。",
+      "reason": "지난 시즌까진保留“直到上一季”的时间范围。",
+      "sourceLine": 88,
+      "sourceFile": "01_换乘恋爱 (1)_ 启明星.html"
+    },
+    {
+      "chapter": 1,
+      "recordId": "roommates",
+      "field": "body",
+      "korean": "\"아뇨, 괜찮은데요?\"",
+      "before": "“不用了，我可以。”",
+      "after": "“不用了，我没关系的。”",
+      "reason": "괜찮은데요不是“我可以”；保留表面客气而带刺的否定。",
+      "sourceLine": 93,
+      "sourceFile": "01_换乘恋爱 (1)_ 启明星.html"
+    },
+    {
+      "chapter": 1,
+      "recordId": "roommates",
+      "field": "body",
+      "korean": "\"그러세요, 그럼.\"",
+      "before": "“好，那你自己来。”",
+      "after": "“那好，您请便。”",
+      "reason": "그러세요, 그럼没有“自己来”的增译；用礼貌而疏离的语气回应。",
+      "sourceLine": 94,
+      "sourceFile": "01_换乘恋爱 (1)_ 启明星.html"
+    },
+    {
+      "chapter": 1,
+      "recordId": "woodz-arrival",
+      "field": "note",
+      "korean": "ㄴ환연에 ㄹㅈㄷ뼈를 묻으시네",
+      "before": "“埋下传奇之骨”保留原文夸张说法；《해가 될까》为 WOODZ 的《Sun or Suck》。",
+      "after": "“뼈를 묻다”是扎根、奉献到底的惯用说法；《해가 될까》为 WOODZ 的《Sun or Suck》。",
+      "reason": "正文惯用语改译后同步修正注释，避免继续将旧直译解释为准确译法。",
+      "sourceLine": 65,
+      "sourceFile": "01_换乘恋爱 (1)_ 启明星.html"
     }
   ]
 }

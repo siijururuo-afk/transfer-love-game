@@ -22,6 +22,7 @@ def main():
     out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
     for f in sorted(Path(a.original_html).glob('*.html')):
         parser=Article();parser.feed(f.read_text(encoding='utf-8'))
-        lines=[x.strip() for x in ''.join(parser.parts).splitlines() if x.strip()]
+        # Leading NBSP/space carries comment reply hierarchy in the supplied HTML.
+        lines=[x.rstrip() for x in ''.join(parser.parts).splitlines() if x.strip()]
         (out/(f.name[:2]+'.txt')).write_text('\n'.join(f'{i+1:04} {line}' for i,line in enumerate(lines)),encoding='utf-8')
 if __name__=='__main__':main()

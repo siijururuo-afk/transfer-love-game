@@ -5,11 +5,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 0
+    "order": 0,
+    "sourceRanges": [
+      {
+        "startLine": 1,
+        "endLine": 4
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "rumour",
@@ -24,11 +32,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "theqoo",
     "storedApp": "theqoo",
-    "order": 1
+    "order": 1,
+    "sourceRanges": [
+      {
+        "startLine": 5,
+        "endLine": 20
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "season10teaser",
@@ -43,11 +59,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 2
+    "order": 2,
+    "sourceRanges": [
+      {
+        "startLine": 21,
+        "endLine": 22
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "teaser-replies",
@@ -55,11 +79,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "theqoo",
-    "order": 3
+    "order": 3,
+    "sourceRanges": [
+      {
+        "startLine": 23,
+        "endLine": 36
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "move-in",
@@ -67,11 +99,23 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 4
+    "order": 4,
+    "sourceRanges": [
+      {
+        "startLine": 37,
+        "endLine": 37
+      },
+      {
+        "startLine": 39,
+        "endLine": 41
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "faces",
@@ -86,11 +130,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 5
+    "order": 5,
+    "sourceRanges": [
+      {
+        "startLine": 42,
+        "endLine": 58
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "woodz-arrival",
@@ -105,11 +157,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 6
+    "order": 6,
+    "sourceRanges": [
+      {
+        "startLine": 59,
+        "endLine": 74
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "introduction",
@@ -117,11 +177,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 7
+    "order": 7,
+    "sourceRanges": [
+      {
+        "startLine": 75,
+        "endLine": 80
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "house-guide",
@@ -129,11 +197,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "files",
-    "order": 8
+    "order": 8,
+    "sourceRanges": [
+      {
+        "startLine": 81,
+        "endLine": 87
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "roommates",
@@ -141,11 +217,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 9
+    "order": 9,
+    "sourceRanges": [
+      {
+        "startLine": 88,
+        "endLine": 97
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "x-letter-instruction",
@@ -153,11 +237,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "files",
-    "order": 10
+    "order": 10,
+    "sourceRanges": [
+      {
+        "startLine": 98,
+        "endLine": 98
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "reading-letter",
@@ -165,11 +257,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 11
+    "order": 11,
+    "sourceRanges": [
+      {
+        "startLine": 99,
+        "endLine": 103
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "wooseok-letter",
@@ -177,11 +277,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "files",
-    "order": 12
+    "order": 12,
+    "sourceRanges": [
+      {
+        "startLine": 104,
+        "endLine": 108
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "after-letter",
@@ -189,11 +297,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 13
+    "order": 13,
+    "sourceRanges": [
+      {
+        "startLine": 109,
+        "endLine": 112
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "obvious-x",
@@ -208,11 +324,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "theqoo",
     "storedApp": "theqoo",
-    "order": 14
+    "order": 14,
+    "sourceRanges": [
+      {
+        "startLine": 113,
+        "endLine": 125
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "drowning",
@@ -227,11 +351,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 15
+    "order": 15,
+    "sourceRanges": [
+      {
+        "startLine": 126,
+        "endLine": 138
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "rps-2019",
@@ -246,11 +378,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 16
+    "order": 16,
+    "sourceRanges": [
+      {
+        "startLine": 139,
+        "endLine": 156
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "seungyoun-letter-post",
@@ -265,11 +405,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 17
+    "order": 17,
+    "sourceRanges": [
+      {
+        "startLine": 157,
+        "endLine": 174
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "seungyoun-interview",
@@ -277,11 +425,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 18
+    "order": 18,
+    "sourceRanges": [
+      {
+        "startLine": 175,
+        "endLine": 184
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "wooseok-interview",
@@ -289,11 +445,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 19
+    "order": 19,
+    "sourceRanges": [
+      {
+        "startLine": 185,
+        "endLine": 192
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "x-reveal",
@@ -301,11 +465,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 20
+    "order": 20,
+    "sourceRanges": [
+      {
+        "startLine": 193,
+        "endLine": 198
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "coming-soon",
@@ -313,11 +485,19 @@
     "sourceFile": "01_换乘恋爱 (1)_ 启明星.html",
     "sourceSha256": "025fc8159c20c41dd50bd98b2a2068b82eb73c67556d6ca9035067de6c0b6a03",
     "headingLocator": null,
-    "paragraphAlignmentStatus": "chapter assigned; precise paragraph alignment pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": null,
     "storedApp": "tving",
-    "order": 21
+    "order": 21,
+    "sourceRanges": [
+      {
+        "startLine": 199,
+        "endLine": 210
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "end-discussion",
@@ -332,11 +512,19 @@
       "method": "original heading + ordered correspondence",
       "status": "heading-confirmed; paragraph boundaries not fully reviewed"
     },
-    "paragraphAlignmentStatus": "heading confirmed; precise paragraph boundaries pending",
-    "semanticReviewStatus": "not fully reviewed",
+    "paragraphAlignmentStatus": "reviewed against extracted article; exact inclusive sourceRanges",
+    "semanticReviewStatus": "text reviewed; source media identities unverified",
     "forumSource": "unknown",
     "storedApp": "theqoo",
-    "order": 22
+    "order": 22,
+    "sourceRanges": [
+      {
+        "startLine": 211,
+        "endLine": 234
+      }
+    ],
+    "reviewDate": "2026-11-01",
+    "reviewNotes": "韩中逐条对照；评论回复层级另以原HTML段首不间断空格核对，不能用已strip的旧提取文本推断；源媒体仅有占位，不等于媒体核实。"
   },
   {
     "id": "c2-before-meeting",
