@@ -1,0 +1,986 @@
+{
+  "rumour": {
+    "chapter": 1,
+    "startLine": 5,
+    "searchWindowEndLine": 20,
+    "originalTitle": "무명의더쿠 ㅣ 야 김우석 환승연애 나온다는데?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "season10teaser": {
+    "chapter": 1,
+    "startLine": 21,
+    "searchWindowEndLine": 41,
+    "originalTitle": "[환승연애 시즌 10 예고편]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "faces": {
+    "chapter": 1,
+    "startLine": 42,
+    "searchWindowEndLine": 58,
+    "originalTitle": "[환연 이번 시즌 왤케 다들 잘생김?.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "woodz-arrival": {
+    "chapter": 1,
+    "startLine": 59,
+    "searchWindowEndLine": 112,
+    "originalTitle": "[야근데 설마 김우석말고 연예인 또 나오나 설마???? 에이그럴리가 어떤 대가리빈 이런씨발조승연이왜거기서나와????????????]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "obvious-x": {
+    "chapter": 1,
+    "startLine": 113,
+    "searchWindowEndLine": 125,
+    "originalTitle": "무명의 더쿠 ㅣ 조승연 엑스 누가봐도 김우석 아냐??",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "drowning": {
+    "chapter": 1,
+    "startLine": 126,
+    "searchWindowEndLine": 138,
+    "originalTitle": "[조승연 드라우닝 주인공=김우석.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "rps-2019": {
+    "chapter": 1,
+    "startLine": 139,
+    "searchWindowEndLine": 156,
+    "originalTitle": "[조승연김우석으로19년부터알페스했다는쓰닌데진짜임]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "seungyoun-letter-post": {
+    "chapter": 1,
+    "startLine": 157,
+    "searchWindowEndLine": 210,
+    "originalTitle": "[무슨 사랑을 했냐며 반응 뜨거운 환연10 X소개서.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "end-discussion": {
+    "chapter": 1,
+    "startLine": 211,
+    "searchWindowEndLine": 237,
+    "originalTitle": "[뜨자마자 난리난 환승연애 출연자 조승연X김우석 3년5개월 연애.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-preview-reaction": {
+    "chapter": 2,
+    "startLine": 13,
+    "searchWindowEndLine": 29,
+    "originalTitle": "[선공개 뜨자마자 의문에 빠진 환친자들.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-nervous": {
+    "chapter": 2,
+    "startLine": 30,
+    "searchWindowEndLine": 39,
+    "originalTitle": "무명의 더쿠ㅣ김우석 말 왜 저렇게 하지",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-meeting-summary": {
+    "chapter": 2,
+    "startLine": 40,
+    "searchWindowEndLine": 86,
+    "originalTitle": "[승석 사전만남 정리해옴]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-zero-vote-post": {
+    "chapter": 2,
+    "startLine": 87,
+    "searchWindowEndLine": 103,
+    "originalTitle": "무명의 더쿠ㅣ우석이 0표 ㅁㅊ에바아님?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-ladder": {
+    "chapter": 2,
+    "startLine": 104,
+    "searchWindowEndLine": 122,
+    "originalTitle": "[아~ 문자 보내는거 조승연 봤음????? 얘 존나 골때려ㅋㅋㅋㅋㅋㅋㅋㅋㅋ]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-workout": {
+    "chapter": 2,
+    "startLine": 123,
+    "searchWindowEndLine": 156,
+    "originalTitle": "[조승연 잠 안와서 운동하는 거 봐]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-fighting-post": {
+    "chapter": 2,
+    "startLine": 157,
+    "searchWindowEndLine": 176,
+    "originalTitle": "[둘째 날부터 싸우는 환승연애 X커플.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-talking-room-post": {
+    "chapter": 2,
+    "startLine": 177,
+    "searchWindowEndLine": 228,
+    "originalTitle": "[승석 토킹룸 받아적어옴]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-tearful-post": {
+    "chapter": 2,
+    "startLine": 229,
+    "searchWindowEndLine": 264,
+    "originalTitle": "[인터뷰 후 울먹거리는 우즈.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-youtube-confession": {
+    "chapter": 2,
+    "startLine": 265,
+    "searchWindowEndLine": 293,
+    "originalTitle": "[#환승연에]\"사랑하지만 더 이상은 사랑하고 싶지 않아\" 우즈의 충격 고백",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c2-finger-game": {
+    "chapter": 2,
+    "startLine": 294,
+    "searchWindowEndLine": 318,
+    "originalTitle": "[선공개ㅣ#환승연애#손병호 게임 하자고? 지금?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-garosu-post": {
+    "chapter": 3,
+    "startLine": 1,
+    "searchWindowEndLine": 16,
+    "originalTitle": "[가로수길 데이트 생각보다 ㄱㅊ지 않았음?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-cocktail-video": {
+    "chapter": 3,
+    "startLine": 17,
+    "searchWindowEndLine": 32,
+    "originalTitle": "[#환승연애10] 상대의 첫 만남 장소에 간 우석, X와 간 곳이라고!?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-votes-post": {
+    "chapter": 3,
+    "startLine": 33,
+    "searchWindowEndLine": 63,
+    "originalTitle": "[환연10 오늘자 문자 정리]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-finger-post": {
+    "chapter": 3,
+    "startLine": 64,
+    "searchWindowEndLine": 84,
+    "originalTitle": "무명의 더쿠ㅣ손병호게임으로 알 수 있는 조승연X김우석 연애",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-fighting-video": {
+    "chapter": 3,
+    "startLine": 85,
+    "searchWindowEndLine": 131,
+    "originalTitle": "[#환승연애10] 승연X우석 제발 그만 좀 싸워주세요...",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-timeline-post": {
+    "chapter": 3,
+    "startLine": 132,
+    "searchWindowEndLine": 182,
+    "originalTitle": "[조승연X김우석 타임라인 정리해줌]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-jealousy-post": {
+    "chapter": 3,
+    "startLine": 183,
+    "searchWindowEndLine": 201,
+    "originalTitle": "무명의 더쿠ㅣ조승연 너 그거 사랑이야 멍청아...",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-fine-post": {
+    "chapter": 3,
+    "startLine": 202,
+    "searchWindowEndLine": 230,
+    "originalTitle": "[전 진짜]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c3-x-room-post": {
+    "chapter": 3,
+    "startLine": 231,
+    "searchWindowEndLine": 259,
+    "originalTitle": "[와 드디어 X룸이 열리네]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-talking-post": {
+    "chapter": 4,
+    "startLine": 1,
+    "searchWindowEndLine": 17,
+    "originalTitle": "[이번 지목데이트 토킹룸 지독하다ㄷㄷ]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-popular-video": {
+    "chapter": 4,
+    "startLine": 18,
+    "searchWindowEndLine": 60,
+    "originalTitle": "[#환승연애10] 인기 폭발! 세 명의 선택을 받은 우즈의 속마음은?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-surprise-post": {
+    "chapter": 4,
+    "startLine": 61,
+    "searchWindowEndLine": 80,
+    "originalTitle": "무명의 더쿠ㅣ원래 깜짝 데이트를 저렇게 신청하나?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-both-applied-post": {
+    "chapter": 4,
+    "startLine": 81,
+    "searchWindowEndLine": 140,
+    "originalTitle": "[뭐?X룸이열린다고?승석둘다신청했다고?근데작업실데이트를못본다고?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-wooseok-room-post": {
+    "chapter": 4,
+    "startLine": 141,
+    "searchWindowEndLine": 204,
+    "originalTitle": "[공개되자마자 오열한 승연X우석 X룸.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-seungyoun-room-post": {
+    "chapter": 4,
+    "startLine": 205,
+    "searchWindowEndLine": 237,
+    "originalTitle": "[처음으로 흔들리는 모습을 보이는 승연의 X룸.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c4-catfish-post": {
+    "chapter": 4,
+    "startLine": 238,
+    "searchWindowEndLine": 266,
+    "originalTitle": "[예고 공개되자마자 난리난 환승연애10.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-cafe-post": {
+    "chapter": 5,
+    "startLine": 41,
+    "searchWindowEndLine": 67,
+    "originalTitle": "[눈물없이 볼 수 없는 승석 X룸 대화.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-newcomer-profile": {
+    "chapter": 5,
+    "startLine": 68,
+    "searchWindowEndLine": 80,
+    "originalTitle": "무명의 더쿠ㅣ연프 제안만 5번 받았다는 환승연애10 메기",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-newcomer-pick-post": {
+    "chapter": 5,
+    "startLine": 81,
+    "searchWindowEndLine": 101,
+    "originalTitle": "[와 메기가 김우석 선택함ㅁㅊ 돌았다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-switch-post": {
+    "chapter": 5,
+    "startLine": 102,
+    "searchWindowEndLine": 137,
+    "originalTitle": "[지금 뭐임????어떻게 돼가고 있는거야??????]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-argue-post": {
+    "chapter": 5,
+    "startLine": 138,
+    "searchWindowEndLine": 157,
+    "originalTitle": "[대화를 해라 대화를]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-personality-post": {
+    "chapter": 5,
+    "startLine": 158,
+    "searchWindowEndLine": 183,
+    "originalTitle": "[그... 왜 승연이가 우석이랑 싸우는지 좀 알 것 가틈]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-studio-song-post": {
+    "chapter": 5,
+    "startLine": 184,
+    "searchWindowEndLine": 212,
+    "originalTitle": "[쟤네 또 싸운다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-staring-post": {
+    "chapter": 5,
+    "startLine": 213,
+    "searchWindowEndLine": 260,
+    "originalTitle": "[조승연 자꾸 김요한 뚫어져라 쳐다보는거 개무서움;;]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c5-triangle-video": {
+    "chapter": 5,
+    "startLine": 261,
+    "searchWindowEndLine": 304,
+    "originalTitle": "[#환승연애] 삼각관계 시작? 요한의 등장으로 혼란스러워하는 승연",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-fishing-preview-post": {
+    "chapter": 6,
+    "startLine": 2,
+    "searchWindowEndLine": 41,
+    "originalTitle": "[요한X우석 데이트 선공개 영상 풀리고 충격에 빠진 환친자들.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-breathe-post": {
+    "chapter": 6,
+    "startLine": 42,
+    "searchWindowEndLine": 97,
+    "originalTitle": "무명의 더쿠ㅣ환친자들 숨 쉬세요",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-crossed-post": {
+    "chapter": 6,
+    "startLine": 98,
+    "searchWindowEndLine": 118,
+    "originalTitle": "[이게 뭐지?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-new-fan-post": {
+    "chapter": 6,
+    "startLine": 119,
+    "searchWindowEndLine": 138,
+    "originalTitle": "무명의 더쿠ㅣ나는 어제 승석 입덕했는데",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-chosen-flight-post": {
+    "chapter": 6,
+    "startLine": 139,
+    "searchWindowEndLine": 166,
+    "originalTitle": "[얘들아 나 눈물 나....jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-ddadda-call-post": {
+    "chapter": 6,
+    "startLine": 167,
+    "searchWindowEndLine": 200,
+    "originalTitle": "[저는 지금 죽어도 여한이 없습니다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-x-reveal-video": {
+    "chapter": 6,
+    "startLine": 201,
+    "searchWindowEndLine": 236,
+    "originalTitle": "[#환승연애10] 드디어 X공개! 각 X의 정체는?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-yohan-x-post": {
+    "chapter": 6,
+    "startLine": 237,
+    "searchWindowEndLine": 266,
+    "originalTitle": "[요한 X ㅈㄴ잘생겼다 다른 느낌으로]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-who-judges-post": {
+    "chapter": 6,
+    "startLine": 267,
+    "searchWindowEndLine": 287,
+    "originalTitle": "무명의 더쿠ㅣ참나 왜 그걸 자기가 판단하지",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c6-preview-post": {
+    "chapter": 6,
+    "startLine": 288,
+    "searchWindowEndLine": 316,
+    "originalTitle": "[예고편 본 환친자들.gif]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-porridge-post": {
+    "chapter": 7,
+    "startLine": 2,
+    "searchWindowEndLine": 66,
+    "originalTitle": "[아픈 전남친에게 죽 끓여주는 환연 출연자.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-date-results-post": {
+    "chapter": 7,
+    "startLine": 67,
+    "searchWindowEndLine": 110,
+    "originalTitle": "[지목데이트 결과 딱 정리해준다.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-crossed-text-post": {
+    "chapter": 7,
+    "startLine": 111,
+    "searchWindowEndLine": 144,
+    "originalTitle": "무명의 더쿠ㅣ헐 문자 결과 되게 의외다",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-date-day-post": {
+    "chapter": 7,
+    "startLine": 145,
+    "searchWindowEndLine": 165,
+    "originalTitle": "[승석 때문에 넋이 나간 남출1]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-rivals-date-post": {
+    "chapter": 7,
+    "startLine": 166,
+    "searchWindowEndLine": 237,
+    "originalTitle": "[승연요한 데이트 분위기 궁금하다는 사람 위해서 직접 받아적어옴]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-honest-video": {
+    "chapter": 7,
+    "startLine": 238,
+    "searchWindowEndLine": 256,
+    "originalTitle": "[#환승연애10] 자기야 미안해 했잖아? 나 환승연애 이딴 거 안 나왔어",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-tanghulu-post": {
+    "chapter": 7,
+    "startLine": 257,
+    "searchWindowEndLine": 267,
+    "originalTitle": "무명의 더쿠ㅣ내가 오늘 어이없는 일을 겪었는데... 원래 탕후루란게 제철이고 수요많은 과일들로 만드는 거 아니야..? 오늘 탕후루 가게에 갔는데 글쎄 승석 탕후루가 없다는거야... 승석만큼 제철인게 어디 있다고... 심지어 계절도 안타서 항상 제철일텐데... 속상한 마음에 글이라도 쓴다...",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-fandom-post": {
+    "chapter": 7,
+    "startLine": 268,
+    "searchWindowEndLine": 297,
+    "originalTitle": "[승석러들진짜우리어캄]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c7-preview-post": {
+    "chapter": 7,
+    "startLine": 298,
+    "searchWindowEndLine": 327,
+    "originalTitle": "[야 드디어 진실게임 온다ㅁㅊ.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-mature-breakup-post": {
+    "chapter": 8,
+    "startLine": 20,
+    "searchWindowEndLine": 45,
+    "originalTitle": "[승석 왜 진짜 성숙한 이별 한거같냐;;;???]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-volume-post": {
+    "chapter": 8,
+    "startLine": 46,
+    "searchWindowEndLine": 65,
+    "originalTitle": "[조승연씨 당신은 당신의 성랑을 매우 과소평가하고 있습니다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-hope-circuit-post": {
+    "chapter": 8,
+    "startLine": 66,
+    "searchWindowEndLine": 96,
+    "originalTitle": "무명의 더쿠ㅣ승석러 행복회로 좀 돌려도 되겠습니까?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-date-video": {
+    "chapter": 8,
+    "startLine": 97,
+    "searchWindowEndLine": 122,
+    "originalTitle": "[#환승연애10] 연하남의 패기! 직진하는 김요한, 흔들리는 김우석",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-childish-post": {
+    "chapter": 8,
+    "startLine": 123,
+    "searchWindowEndLine": 130,
+    "originalTitle": "[쟤네 이제 눈치도 안 보고 싸우는구나]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-kiss-post": {
+    "chapter": 8,
+    "startLine": 131,
+    "searchWindowEndLine": 194,
+    "originalTitle": "[조승연이김우석한테키스하는것같았다는쓰닌데.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-truth-post": {
+    "chapter": 8,
+    "startLine": 195,
+    "searchWindowEndLine": 250,
+    "originalTitle": "[진실게임 이거 언제부터 마음 북북찢어놓는 게임이었죠?jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-stock-hope-post": {
+    "chapter": 8,
+    "startLine": 251,
+    "searchWindowEndLine": 275,
+    "originalTitle": "[야 우리도 ㄹㅇ희망이 보인다 feat.승석러들]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c8-x-date-preview-post": {
+    "chapter": 8,
+    "startLine": 276,
+    "searchWindowEndLine": 308,
+    "originalTitle": "[오라오라 달콤한 X데이트여 오라]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-sighting-post": {
+    "chapter": 9,
+    "startLine": 2,
+    "searchWindowEndLine": 41,
+    "originalTitle": "[현재 난리난 환연10 출연자 목격담.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-refusal-post": {
+    "chapter": 9,
+    "startLine": 42,
+    "searchWindowEndLine": 57,
+    "originalTitle": "무명의 더쿠ㅣ왜 내가 다 아깝지",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-outfits-post": {
+    "chapter": 9,
+    "startLine": 58,
+    "searchWindowEndLine": 88,
+    "originalTitle": "[쟤네 서로 필승 조합 입은 거 봐라.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-kayak-post": {
+    "chapter": 9,
+    "startLine": 89,
+    "searchWindowEndLine": 105,
+    "originalTitle": "[얘들아 너네는 그런 말을 무슨 카약 타면서 하니...]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-cafe-post": {
+    "chapter": 9,
+    "startLine": 106,
+    "searchWindowEndLine": 133,
+    "originalTitle": "[그렇게 싸우고 카페에서는 또 아련함]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-x-date-video": {
+    "chapter": 9,
+    "startLine": 134,
+    "searchWindowEndLine": 177,
+    "originalTitle": "[#환승연애10] 건강한 이별 같은 거 필요 없어 승석 행복하게 해주세요...",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-secret-date-post": {
+    "chapter": 9,
+    "startLine": 178,
+    "searchWindowEndLine": 225,
+    "originalTitle": "[비밀 데이트라는 것...jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-crying-post": {
+    "chapter": 9,
+    "startLine": 226,
+    "searchWindowEndLine": 259,
+    "originalTitle": "[제발 얘들아 나 가슴 찢어진다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c9-final-choice-video": {
+    "chapter": 9,
+    "startLine": 260,
+    "searchWindowEndLine": 292,
+    "originalTitle": "[선공개ㅣ최종 선택의 날이 밝았습니다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-watch-party": {
+    "chapter": 10,
+    "startLine": 1,
+    "searchWindowEndLine": 46,
+    "originalTitle": "[오늘 환연 단관 가는 사람??????]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-doomed-post": {
+    "chapter": 10,
+    "startLine": 47,
+    "searchWindowEndLine": 60,
+    "originalTitle": "무명의 더쿠ㅣㅋㅋ얘들아 진짜 망했다",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-spoiler-post": {
+    "chapter": 10,
+    "startLine": 61,
+    "searchWindowEndLine": 77,
+    "originalTitle": "[방금 타싸 스포 봄?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-must-be-couple-post": {
+    "chapter": 10,
+    "startLine": 78,
+    "searchWindowEndLine": 98,
+    "originalTitle": "[승석최커해야해잖아]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-rules-post": {
+    "chapter": 10,
+    "startLine": 99,
+    "searchWindowEndLine": 107,
+    "originalTitle": "[나 환연 안보다가 이번에 첨보는데 이동하면서 바꾼다는게 몬소리야???]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-prediction-post": {
+    "chapter": 10,
+    "startLine": 108,
+    "searchWindowEndLine": 177,
+    "originalTitle": "[너넨 우석이 선택 뭐라고 생각해?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-seungyoun-choice-post": {
+    "chapter": 10,
+    "startLine": 178,
+    "searchWindowEndLine": 246,
+    "originalTitle": "[속보!!!!! 조승연 최종선택 김우석!!!!!jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-wooseok-choice-post": {
+    "chapter": 10,
+    "startLine": 247,
+    "searchWindowEndLine": 269,
+    "originalTitle": "[속보!!!!!! 김우석 최종선택 조승연ㅠㅠㅠㅠㅠㅠㅠㅠㅜㅜㅜ.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-yohan-come-post": {
+    "chapter": 10,
+    "startLine": 270,
+    "searchWindowEndLine": 291,
+    "originalTitle": "무명의 더쿠ㅣ요한아 나한테 와",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-still-fighting-post": {
+    "chapter": 10,
+    "startLine": 292,
+    "searchWindowEndLine": 336,
+    "originalTitle": "[아직도 싸운다는 거 진짜 승석답다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-angel-post": {
+    "chapter": 10,
+    "startLine": 337,
+    "searchWindowEndLine": 348,
+    "originalTitle": "[아니... 아기예수 ㄹㅇ천사야?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-final-results": {
+    "chapter": 10,
+    "startLine": 349,
+    "searchWindowEndLine": 404,
+    "originalTitle": "[최종 결과 딱 정리해줌 드루와.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-keep-shipping-post": {
+    "chapter": 10,
+    "startLine": 405,
+    "searchWindowEndLine": 423,
+    "originalTitle": "[승석열심히할게요]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "c10-beautiful-together-post": {
+    "chapter": 10,
+    "startLine": 424,
+    "searchWindowEndLine": 447,
+    "originalTitle": "[아... 둘의 투샷이 이렇게 아름다운 거라니]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-urgent-post": {
+    "chapter": 11,
+    "startLine": 4,
+    "searchWindowEndLine": 22,
+    "originalTitle": "[ㅁㅊㅁㅊㅁㅊㅁㅊㅁㅊ승석러 긴급긴급긴급🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨!!!!!!!!!]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-qna-story-post": {
+    "chapter": 11,
+    "startLine": 23,
+    "searchWindowEndLine": 49,
+    "originalTitle": "[승석 유튜브 큐앤에이 해주려나봐]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-channel-name-post": {
+    "chapter": 11,
+    "startLine": 50,
+    "searchWindowEndLine": 62,
+    "originalTitle": "무명의 더쿠ㅣ근데 승석 채널명 왜 이렇게 구려?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-premiere-post": {
+    "chapter": 11,
+    "startLine": 63,
+    "searchWindowEndLine": 77,
+    "originalTitle": "[금요일 오후 6시에 큐앤에이 영상 올라온대]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-uploaded-post": {
+    "chapter": 11,
+    "startLine": 78,
+    "searchWindowEndLine": 118,
+    "originalTitle": "[올라왔다.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-sweet-qna-post": {
+    "chapter": 11,
+    "startLine": 119,
+    "searchWindowEndLine": 134,
+    "originalTitle": "[유튜브 큐앤에이라는 거 참 좋은거구나...]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-touching-post": {
+    "chapter": 11,
+    "startLine": 135,
+    "searchWindowEndLine": 173,
+    "originalTitle": "[쟤네 근데 스킨십 되게 많다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-oneit-post": {
+    "chapter": 11,
+    "startLine": 174,
+    "searchWindowEndLine": 190,
+    "originalTitle": "[안녕하세요 원잇입니다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-cast-friendship-post": {
+    "chapter": 11,
+    "startLine": 191,
+    "searchWindowEndLine": 205,
+    "originalTitle": "[환연 출연자들 친목 꾸준히 하네.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-name-suggestions-post": {
+    "chapter": 11,
+    "startLine": 206,
+    "searchWindowEndLine": 245,
+    "originalTitle": "[채널명 추천 받네]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-cameraman-post": {
+    "chapter": 11,
+    "startLine": 246,
+    "searchWindowEndLine": 260,
+    "originalTitle": "[카메라 맨 목소리 익숙하지 않아?????]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-understand-yohan-post": {
+    "chapter": 11,
+    "startLine": 261,
+    "searchWindowEndLine": 294,
+    "originalTitle": "[난 요한이가 이해간다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-three-person-qna-post": {
+    "chapter": 11,
+    "startLine": 295,
+    "searchWindowEndLine": 316,
+    "originalTitle": "[실시간 아기예수와 같이 Q&A하는 승석.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-part-two-post": {
+    "chapter": 11,
+    "startLine": 317,
+    "searchWindowEndLine": 331,
+    "originalTitle": "[와ㅁㅊ 2편도 있네!!!!!!!!!!!!!!!!]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-soundcloud-post": {
+    "chapter": 11,
+    "startLine": 332,
+    "searchWindowEndLine": 361,
+    "originalTitle": "무명의 더쿠ㅣ조승연 노래 발매했어? 되게 좋다",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e1-live-announcement-post": {
+    "chapter": 11,
+    "startLine": 362,
+    "searchWindowEndLine": 379,
+    "originalTitle": "[ㅁㅊ조승연 스토리 봤어?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-nervous-post": {
+    "chapter": 12,
+    "startLine": 3,
+    "searchWindowEndLine": 29,
+    "originalTitle": "[후하후하 떨린다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-five-minutes-post": {
+    "chapter": 12,
+    "startLine": 30,
+    "searchWindowEndLine": 95,
+    "originalTitle": "[5분 남았다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-schedules-post": {
+    "chapter": 12,
+    "startLine": 96,
+    "searchWindowEndLine": 117,
+    "originalTitle": "[같스케 많은 것 같은데?]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-marriage-post": {
+    "chapter": 12,
+    "startLine": 118,
+    "searchWindowEndLine": 145,
+    "originalTitle": "[결혼...이라고 말했다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-hollywood-post": {
+    "chapter": 12,
+    "startLine": 146,
+    "searchWindowEndLine": 176,
+    "originalTitle": "[할리우드 같은 게 아니라 너넨 정말 할리우드가 맞다]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-truth-answer-post": {
+    "chapter": 12,
+    "startLine": 177,
+    "searchWindowEndLine": 230,
+    "originalTitle": "[와 진겜 패스한 질문 답 김요한이었네ㅋㅋㅋㅋㅋㅋ]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-winning-outfit-post": {
+    "chapter": 12,
+    "startLine": 231,
+    "searchWindowEndLine": 243,
+    "originalTitle": "[필승 조합 역시 노린 거였어]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-different-choice-post": {
+    "chapter": 12,
+    "startLine": 244,
+    "searchWindowEndLine": 273,
+    "originalTitle": "[와 엇갈렸음 아예 안봤을거래]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-happy-two-hours-post": {
+    "chapter": 12,
+    "startLine": 274,
+    "searchWindowEndLine": 289,
+    "originalTitle": "[행복한 2시간이었다...]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-selfie-post": {
+    "chapter": 12,
+    "startLine": 290,
+    "searchWindowEndLine": 307,
+    "originalTitle": "[ㅁㅊ커플 셀카 올라왔다!!!!!!!!.jpg]",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  },
+  "e2-last-words-post": {
+    "chapter": 12,
+    "startLine": 308,
+    "searchWindowEndLine": 328,
+    "originalTitle": "무명의 더쿠ㅣ마지막에 한 말 뭔가 감동이지 않아ㅠㅠ?",
+    "method": "original heading + ordered correspondence",
+    "status": "heading-confirmed; paragraph boundaries not fully reviewed"
+  }
+}

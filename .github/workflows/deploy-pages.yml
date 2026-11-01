@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: 拉取代码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 安装 Node.js
         uses: actions/setup-node@v4
@@ -39,6 +41,9 @@ jobs:
 
       - name: 生产构建
         run: npm run build
+
+      - name: 验证剧情、存档、交互与 PWA
+        run: npm run check:chapter && npm run check:interactions && npm run check:redesign && npm run check:pwa
 
       - name: 上传构建产物
         uses: actions/upload-pages-artifact@v3

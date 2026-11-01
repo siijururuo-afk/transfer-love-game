@@ -1,0 +1,525 @@
+{
+  "localFiles": [
+    {
+      "path": "reboot/public/audio/sun-or-suck.mp3",
+      "bytes": 6856663,
+      "sha256": "2c2073a3ee9caa0bd14959a743bf61037eaec7e3192b4b110efba37985798d01",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "mp3"
+          },
+          {
+            "codec_name": "mjpeg",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "format": {
+          "duration": "170.136000"
+        }
+      }
+    },
+    {
+      "path": "reboot/public/covers/drowning.jpg",
+      "bytes": 60754,
+      "sha256": "db1d17da6025672657226091a042a4002519fe7b281b040d4689db673418d1c2"
+    },
+    {
+      "path": "reboot/public/covers/i-hate-you.jpg",
+      "bytes": 118793,
+      "sha256": "0741ff37d4187ff570fc1b8077237a3e849df890f90e234ab2a4f2f6f2161ba3"
+    },
+    {
+      "path": "reboot/public/covers/love-shot.jpg",
+      "bytes": 70514,
+      "sha256": "f3e4db4cb2b866a38959d78d9c44316648d5eacf4e1173baf92d3182e1c58b35"
+    },
+    {
+      "path": "reboot/public/covers/meaningless.jpg",
+      "bytes": 77505,
+      "sha256": "7b359f99f5ec046ecf3a2cebb97c0441247d355fb5a69b690f51e25e8c689e04"
+    },
+    {
+      "path": "reboot/public/covers/sun-or-suck.jpg",
+      "bytes": 105696,
+      "sha256": "c2db821c7d56ce8337a8ba95d2f8d0578c1aaeb27b37db5999869b780be766dc"
+    },
+    {
+      "path": "reboot/public/favicon.svg",
+      "bytes": 253,
+      "sha256": "6bbc42fd0598f3a4d39f34bf1298125fd0db01660ba71e8c5a1054c6f681e0f9"
+    },
+    {
+      "path": "reboot/public/icon-192.png",
+      "bytes": 1736,
+      "sha256": "bb6e37d6125c721adbdbfe93884c2875e54a8c4470423668b414dbb49ac211b4"
+    },
+    {
+      "path": "reboot/public/icon-512.png",
+      "bytes": 4501,
+      "sha256": "63936275a1d34316543a98e03ef0922a9595c2fc0ad01a06dc3cb70124243977"
+    },
+    {
+      "path": "reboot/public/instagram/avatar.jpeg",
+      "bytes": 214719,
+      "sha256": "2890936bfc5f3f68d2a6e99c363f296ca31598b90e3858a44ca16e3abd5316a6"
+    },
+    {
+      "path": "reboot/public/instagram/beauty-1.jpeg",
+      "bytes": 206251,
+      "sha256": "afcfcf7c0772d71c4725c9afe4e06cf207a0f93ac9585649c3ac6b95fd12e7b4"
+    },
+    {
+      "path": "reboot/public/instagram/beauty-2.jpeg",
+      "bytes": 202424,
+      "sha256": "2c912dd877e13656907f665cc1606251c89d989a9ef013a2960a30bb5f043d4b"
+    },
+    {
+      "path": "reboot/public/instagram/blood-1.jpeg",
+      "bytes": 201657,
+      "sha256": "975a1eca7cf75b47f0e16259e0f6fb5bcc4911ed5be18954369e209a64a7e7e3"
+    },
+    {
+      "path": "reboot/public/instagram/blood-2.jpeg",
+      "bytes": 224989,
+      "sha256": "15432a4e1649982488f4ac4b213863eaab2917c38e9001c7d8ecb6543920cf5a"
+    },
+    {
+      "path": "reboot/public/instagram/blood-3.jpeg",
+      "bytes": 222891,
+      "sha256": "77f09bf22900055e8c796f54a2596a9e12bdd9c968dc9fe94f9bee67a57eeb93"
+    },
+    {
+      "path": "reboot/public/instagram/blood-4.jpeg",
+      "bytes": 262360,
+      "sha256": "145422f147af10b0444ec025d35531217c6155e6f7695b79d297d4be49a65573"
+    },
+    {
+      "path": "reboot/public/instagram/blood-5.jpeg",
+      "bytes": 143027,
+      "sha256": "e5c74ba25e08971727447411c8f863818907a7d506877dbdf9b3118f88d87c43"
+    },
+    {
+      "path": "reboot/public/instagram/blood-6.jpeg",
+      "bytes": 209980,
+      "sha256": "a6a8deb2406eb13b25a132dddbd2afb2f7f9bb06e5c736c04742d89f3db09c97"
+    },
+    {
+      "path": "reboot/public/instagram/blood-7.mp4",
+      "bytes": 1368425,
+      "sha256": "2c8321c8e0f4cbed19e427ef53d3c7459790bd83ad7774683d4e915c3fafddce",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 512,
+            "height": 640
+          },
+          {
+            "codec_name": "aac"
+          }
+        ],
+        "format": {
+          "duration": "20.400000"
+        }
+      }
+    },
+    {
+      "path": "reboot/public/instagram/blood-8.mp4",
+      "bytes": 177384,
+      "sha256": "8fd6c89cc1f7aece7a5166220f308d36e2696c19a67035dc00114cdb015e44b7",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 480,
+            "height": 600
+          },
+          {
+            "codec_name": "aac"
+          }
+        ],
+        "format": {
+          "duration": "2.533333"
+        }
+      }
+    },
+    {
+      "path": "reboot/public/instagram/cardigan-1.jpeg",
+      "bytes": 198915,
+      "sha256": "5027cec35025659b8ce5a75cf2c29c5ab18d268b1aba1adfde45c0a689660439"
+    },
+    {
+      "path": "reboot/public/instagram/cardigan-2.jpeg",
+      "bytes": 321779,
+      "sha256": "abcee503e7b93299d6cbbcd08691a9a6e9c6f97e74b51e594fe9c59b20a25060"
+    },
+    {
+      "path": "reboot/public/instagram/cardigan-3.mp4",
+      "bytes": 135770,
+      "sha256": "ed24dc80e0b112ecb9e4c8da3b82660b88b07a7b49451c38da0d2e6eb8e119d9",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 512,
+            "height": 544
+          }
+        ],
+        "format": {
+          "duration": "3.633333"
+        }
+      }
+    },
+    {
+      "path": "reboot/public/instagram/denim-1.jpeg",
+      "bytes": 348167,
+      "sha256": "77335c21539d50a983edab4dd571b484dabbbb063394e8909848b0ddfbb43c26"
+    },
+    {
+      "path": "reboot/public/instagram/denim-2.jpeg",
+      "bytes": 330462,
+      "sha256": "0bedbfe4f21c5eb07373d2a85c12129c47623dde4c1853963b489e0af608f908"
+    },
+    {
+      "path": "reboot/public/instagram/denim-3.mp4",
+      "bytes": 302712,
+      "sha256": "af73c510d0e1e7556f659438f035a159a7b52eaec278c21d59248fff4c8a764c",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 512,
+            "height": 640
+          }
+        ],
+        "format": {
+          "duration": "5.766667"
+        }
+      }
+    },
+    {
+      "path": "reboot/public/instagram/highlight.png",
+      "bytes": 336793,
+      "sha256": "72f541032247c4c9a170706c6dc604a7deece8f3c5c59f76d63351bb79ebe5d3"
+    },
+    {
+      "path": "reboot/public/instagram/mirror-1.jpeg",
+      "bytes": 205784,
+      "sha256": "22dbdd200b8f47591a0efb2562076f5a486cb21cef094cf85d946a5c3f3c88d3"
+    },
+    {
+      "path": "reboot/public/instagram/night-1.jpeg",
+      "bytes": 89774,
+      "sha256": "ccf331b1321cf671d268c96a3a8ee840debbac9bf520d419584e476d90693aac"
+    },
+    {
+      "path": "reboot/public/photos/after-drinks.webp",
+      "bytes": 139282,
+      "sha256": "2e39a9f3e61099b91cb127c623a4cba1c0a9f0fa6f8d9573f00760ef9ec2c089"
+    },
+    {
+      "path": "reboot/public/photos/and-now-couple-selfie.webp",
+      "bytes": 93132,
+      "sha256": "820152e91b9815f029018f916962ac8823cf194ed88d010cb726389551f6ed26"
+    },
+    {
+      "path": "reboot/public/photos/and-now-dinner-date.webp",
+      "bytes": 224402,
+      "sha256": "f1db1d2ae9a35a8ee64e80e641021da97fefa9a866cb18a65bbe69864d221657"
+    },
+    {
+      "path": "reboot/public/photos/and-now-photo-booth.webp",
+      "bytes": 77584,
+      "sha256": "7ae60e3b871e27cf9057478ff9f0fe415a9d01c76a9d582af11a4a0b69122630"
+    },
+    {
+      "path": "reboot/public/photos/and-now-red-airpods.webp",
+      "bytes": 100648,
+      "sha256": "37a61e44f693c861708da0d54ee2e3d372016528522ebd8e910107b944d9ba3c"
+    },
+    {
+      "path": "reboot/public/photos/and-now-studio.webp",
+      "bytes": 166048,
+      "sha256": "6936024355da0676bddcea2485cf7b24997a00f2fbfbc8bbdbfd732225c06992"
+    },
+    {
+      "path": "reboot/public/photos/and-now-taking-photo.webp",
+      "bytes": 97366,
+      "sha256": "40c0f664690aee6b6cadeefe7a372856de9ea6194c5219a584dd748c6de6c0bf"
+    },
+    {
+      "path": "reboot/public/photos/and-now-together.webp",
+      "bytes": 22020,
+      "sha256": "7518a59f3f62b32d6a09423c76c90e33ce73bdab92fe52a1f4ea0aa2d5cc16ed"
+    },
+    {
+      "path": "reboot/public/photos/asleep-at-home.webp",
+      "bytes": 104474,
+      "sha256": "dc05c1e8a6ee9645ec37546e648485c2f2edfd022d63bfb08d53a0b2e51b3147"
+    },
+    {
+      "path": "reboot/public/photos/birthday-meal.webp",
+      "bytes": 101442,
+      "sha256": "898cdfcb9822723eedff7394a7519b9640ab7a56f50e6c9c34309675cab7e90b"
+    },
+    {
+      "path": "reboot/public/photos/boyfriend-gym.webp",
+      "bytes": 69568,
+      "sha256": "d6bde9c8b00be267979cb7fb4ebbafe0dde051ab2de97e04e4f55901c57c981e"
+    },
+    {
+      "path": "reboot/public/photos/cafe-date-photo.webp",
+      "bytes": 564172,
+      "sha256": "defc0346d1f28c534690cb6361d2544253caa11581cabfffdb4ec8b07f9b7b74"
+    },
+    {
+      "path": "reboot/public/photos/cafe.webp",
+      "bytes": 159008,
+      "sha256": "b096f28da8f5c46d5931c923355f2ebd13302529aec0dbd1f8a1cf18ac6e88ca"
+    },
+    {
+      "path": "reboot/public/photos/concert-day.webp",
+      "bytes": 52018,
+      "sha256": "e98875d1ed45f3d65fbc324a753a6d695cf7befbb81ad2e40350342697fbdcbd"
+    },
+    {
+      "path": "reboot/public/photos/couple-qna-story.webp",
+      "bytes": 93562,
+      "sha256": "020197a4d9c7002cdbd40aa83a9ca6c5bdcc5c44d663a582ccb96d6ebb1317c2"
+    },
+    {
+      "path": "reboot/public/photos/ddadda-walk.webp",
+      "bytes": 29640,
+      "sha256": "5f09715bd469fa1407887250dc5980e9d22f1dfc330066e8b6d3e46035c9565a"
+    },
+    {
+      "path": "reboot/public/photos/drinks-with-friends.webp",
+      "bytes": 91920,
+      "sha256": "8ef30f8a37275574a2fb0aad8140958adc5c0b37a809b018ce6e16c89398af03"
+    },
+    {
+      "path": "reboot/public/photos/favorite-selfie.webp",
+      "bytes": 147890,
+      "sha256": "49b0debac5d7c4b67ec81b7908195e6d2e0b71659d1c0505c0488690c30b97e6"
+    },
+    {
+      "path": "reboot/public/photos/filming-photo.webp",
+      "bytes": 164706,
+      "sha256": "c8660d4d9f526d57bc55c8154ef62a24a08b991a318f96288740aee5d6591e85"
+    },
+    {
+      "path": "reboot/public/photos/first-birthday.webp",
+      "bytes": 155618,
+      "sha256": "cc6b13d7102ae14c4275998bf58e9912766b914971ad3c30e9a713d241f1450e"
+    },
+    {
+      "path": "reboot/public/photos/france.webp",
+      "bytes": 114346,
+      "sha256": "bb0159231e176b3b62fe9af346406cdf54686638df71a1455c1ee102f29e09b0"
+    },
+    {
+      "path": "reboot/public/photos/han-river-memory.webp",
+      "bytes": 200484,
+      "sha256": "fadaf0f2f877818ae1cbc124da9476aa3a17b0cc6a4f30bcf24735ecd75cf4ed"
+    },
+    {
+      "path": "reboot/public/photos/han-river.webp",
+      "bytes": 141364,
+      "sha256": "00ad54d0201355efa5e221b44f42c58c79a2a42c01a546f4a9613ca332c5d436"
+    },
+    {
+      "path": "reboot/public/photos/japan-trip.webp",
+      "bytes": 101172,
+      "sha256": "a2b70fc0dc656334bbb40b42dbd837a114910b0c86e53fd5130b0354f406451d"
+    },
+    {
+      "path": "reboot/public/photos/jeju-memory.webp",
+      "bytes": 274302,
+      "sha256": "d9984c79c8aa432a77fa8cf11f61e84b50d05535028ce493b2d669e70a57132a"
+    },
+    {
+      "path": "reboot/public/photos/kakao-profile-memory.webp",
+      "bytes": 291324,
+      "sha256": "8dc6d10283bd50a769d863bce93e00fe14b5f4c300ae1f92a0046836541a025f"
+    },
+    {
+      "path": "reboot/public/photos/love-shot.jpg",
+      "bytes": 195114,
+      "sha256": "a4186640c088003c2acabf902d8c4ba47fe91078b7ab889a8a054e46d0ef7781"
+    },
+    {
+      "path": "reboot/public/photos/night-sea-trip.webp",
+      "bytes": 117268,
+      "sha256": "32de323820adc1adb14b7ee47b83a79b47065bf98c6dac495175277443960c23"
+    },
+    {
+      "path": "reboot/public/photos/night-walk.webp",
+      "bytes": 56668,
+      "sha256": "0c9914392888beb2d5ff975843955a9a11f791dda4646b7724d2de5e62bd35cf"
+    },
+    {
+      "path": "reboot/public/photos/on-the-way-to-wooseok.webp",
+      "bytes": 190244,
+      "sha256": "8674dbd726c4f7d05a62758d2d0d9c96621b171abebfe6188023a72c396b27ea"
+    },
+    {
+      "path": "reboot/public/photos/overseas-trip.webp",
+      "bytes": 62492,
+      "sha256": "18c4f67455daedd29e795716abf17e38fb3d38124b443856a250b71e12ca13ef"
+    },
+    {
+      "path": "reboot/public/photos/playing-with-ddadda.webp",
+      "bytes": 18334,
+      "sha256": "e71a187316262b9b426f27051d063c82a9d9ec9a73d57665ed16fa3bc4f24601"
+    },
+    {
+      "path": "reboot/public/photos/rehearsal.webp",
+      "bytes": 297346,
+      "sha256": "83a2012661a4467db2b6ebef85812befe9c5fbb1912bc0c2521e1985e7862d20"
+    },
+    {
+      "path": "reboot/public/photos/samijo-reaction.webp",
+      "bytes": 21274,
+      "sha256": "3be293fa21d2853c51e2bf85535976521b899c9bf9f9ca32c48f2a3e4c982f76"
+    },
+    {
+      "path": "reboot/public/photos/script-practice.webp",
+      "bytes": 46342,
+      "sha256": "b1be09d2910a217a206227f7c64f5763b00abd2963d8b24a9c1a16d291092a24"
+    },
+    {
+      "path": "reboot/public/photos/second-birthday.webp",
+      "bytes": 108872,
+      "sha256": "e677a348ffc6526a03bda55ee0b293e8b46e7c5cb5fa3e6eb2138822543f94c5"
+    },
+    {
+      "path": "reboot/public/photos/second-favorite-selfie.webp",
+      "bytes": 55524,
+      "sha256": "4473680c1bc0680fc910e2b97486c9bf20e48361c4f9bbb325e0efbc92922898"
+    },
+    {
+      "path": "reboot/public/photos/seokchon-lake-night.webp",
+      "bytes": 239880,
+      "sha256": "ff64c58566ab86ca5060db07b997a378b7a4ce8069f321868b9ee50897c53276"
+    },
+    {
+      "path": "reboot/public/photos/seungyoun-snapshot.webp",
+      "bytes": 131738,
+      "sha256": "cb8c51f99c14681f6a18f099cc91568ea5053f209e9312e7495b80825c5af1a3"
+    },
+    {
+      "path": "reboot/public/photos/smelt-fishing.webp",
+      "bytes": 147854,
+      "sha256": "59a8ea3db8bc735c9acfbb127bfdb2817037e713ef3b6fbb46330e3bfa54aff0"
+    },
+    {
+      "path": "reboot/public/photos/snowboard-day.webp",
+      "bytes": 525490,
+      "sha256": "74dca3c15d8ef1a2c11d97e392bbad3339ca4f4662964977ebb7ad9ee231267b"
+    },
+    {
+      "path": "reboot/public/photos/street-food-trip.webp",
+      "bytes": 38594,
+      "sha256": "a37649bd4f4a2f5f4160187b66cb9efc242c36860a8b7bac4472cde17e604b80"
+    },
+    {
+      "path": "reboot/public/photos/studio-moving-day.webp",
+      "bytes": 123242,
+      "sha256": "d90476d4ea5f129dcc944812e20a5f502e1fe7cf9da3f2e2f747e122b807dd6f"
+    },
+    {
+      "path": "reboot/public/photos/sulky-wooseok.webp",
+      "bytes": 45924,
+      "sha256": "405c7a456c8411608b031d2cde2e65fcbec5f0008ffd7f6758e208db36155c25"
+    },
+    {
+      "path": "reboot/public/photos/university.webp",
+      "bytes": 232092,
+      "sha256": "f47212ec1f26e555b146f9212aa65af90cbf6e2537942ad760b6596c95b24e8e"
+    },
+    {
+      "path": "reboot/public/photos/video-call-with-seungyoun.jpeg",
+      "bytes": 153707,
+      "sha256": "97af5e3d2dcea304bcc4e1a0f6926a2e100a7a65f4ee544022f15556590f8244"
+    },
+    {
+      "path": "reboot/public/photos/winter-sea-trip.webp",
+      "bytes": 239776,
+      "sha256": "3e60dcec5b1dca64d1fcffaae18f1b552881afa7cc345983c2bca2dceeee3a19"
+    }
+  ],
+  "originalImageSlotsByChapter": [
+    {
+      "chapter": 1,
+      "sourceImageTags": 0,
+      "mappedSceneImages": 0
+    },
+    {
+      "chapter": 2,
+      "sourceImageTags": 4,
+      "mappedSceneImages": 4
+    },
+    {
+      "chapter": 3,
+      "sourceImageTags": 4,
+      "mappedSceneImages": 4
+    },
+    {
+      "chapter": 4,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 5,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 6,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 7,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 8,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 9,
+      "sourceImageTags": 5,
+      "mappedSceneImages": 5
+    },
+    {
+      "chapter": 10,
+      "sourceImageTags": 8,
+      "mappedSceneImages": 8
+    },
+    {
+      "chapter": 11,
+      "sourceImageTags": 1,
+      "mappedSceneImages": 1
+    },
+    {
+      "chapter": 12,
+      "sourceImageTags": 0,
+      "mappedSceneImages": 0
+    }
+  ],
+  "sourceImagesContainBytes": false,
+  "originalExternalImageUrlsAvailable": false,
+  "imageMappingCaveat": "HTML中47个img均无有效src，按现有素材与顺序保留；仅数量与文件完整性可核实，不能声称与丢失的原始图片逐字节比对。",
+  "externalAudioCaveat": "现有五首歌保留；其中外部试听源的地区、有效期与真实Safari后台行为未完整验证。",
+  "sourceTextCaveat": "十二篇原文可用。356条逐段语义审校未完成，不以数量或哈希代替语义校对。"
+}
